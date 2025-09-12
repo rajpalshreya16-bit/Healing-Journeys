@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healing Journeys - Support, Stories, Strength</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c5530;
+            background: linear-gradient(135deg, #f0f8f2 0%, #e8f4ea 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4a7c59;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c5530;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: #4a7c59;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        main {
+            margin-top: 100px;
+            padding: 2rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(74, 124, 89, 0.1), rgba(168, 218, 220, 0.1));
+            border-radius: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #4a7c59;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #5a7b5e;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4a7c59, #5d8b69);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #4a7c59;
+            border: 2px solid #4a7c59;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #a8dadc;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4a7c59;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .testimonial blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #5a7b5e;
+        }
+
+        .testimonial cite {
+            font-weight: bold;
+            color: #4a7c59;
+        }
+
+        .quick-access {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .quick-btn {
+            background: linear-gradient(135deg, #a8dadc, #4a7c59);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .quick-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            background: rgba(44, 85, 48, 0.95);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #a8dadc;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #a8dadc;
+        }
+
+        .privacy-banner {
+            background: rgba(168, 218, 220, 0.9);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #4a7c59;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: #4a7c59;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">🌱 Healing Journeys</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#stories">Stories</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#messages">Messages</a></li>
+                    <li><a href="#" onclick="showModal('loginModal')">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero" id="home">
+                <h1>Healing Journeys</h1>
+                <p>A supportive community where cancer patients, survivors, and caregivers share experiences, stay organized, and find strength together.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" onclick="showModal('signupModal')">Join Our Community</a>
+                    <a href="#stories" class="btn btn-secondary">Read Stories</a>
+                </div>
+            </section>
+
+            <div class="privacy-banner">
+                <strong>🔒 Your Privacy Matters:</strong> All personal information is encrypted and secure. You control what you share and with whom.
+            </div>
+
+            <section class="quick-access">
+                <a href="#" class="quick-btn" onclick="showModal('toolsModal')">
+                    📋 Treatment Tracker
+                </a>
+                <a href="#" class="quick-btn" onclick="showModal('messageModal')">
+                    💌 Send Encouragement
+                </a>
+                <a href="#" class="quick-btn" onclick="showModal('storyModal')">
+                    📖 Share Your Story
+                </a>
+                <a href="#" class="quick-btn" onclick="showModal('appointmentModal')">
+                    🗓️ Appointment Planner
+                </a>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <span class="feature-icon">📖</span>
+                    <h3>Share Your Story</h3>
+                    <p>Connect with others by sharing your journey. Your experience can inspire and help fellow patients navigate their own paths. Post anonymously or with your name - you choose.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">💌</span>
+                    <h3>Receive Encouragement</h3>
+                    <p>Get uplifting messages from community members worldwide. All messages are moderated to ensure they're positive and supportive. Opt-in to receive them via email or secure inbox.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">📋</span>
+                    <h3>Treatment Tools</h3>
+                    <p>Stay organized with customizable checklists, appointment trackers, medication reminders, and mood logs. Export your data to share with healthcare providers.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is encrypted and protected. Choose what to share publicly, what to keep private, and maintain full control over your personal information.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">👥</span>
+                    <h3>Community Support</h3>
+                    <p>Connect with patients, survivors, and caregivers. Find your community through cancer type, treatment phase, or shared experiences in a moderated, positive environment.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">📱</span>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access your tools and community from anywhere - hospital waiting rooms, treatment centers, or the comfort of home. Large buttons and simple navigation for easy use.</p>
+                </div>
+            </section>
+
+            <section class="testimonial">
+                <blockquote>
+                    "Reading other survivors' stories gave me hope during my darkest days. The treatment tracker helped me stay organized, and the encouraging messages from strangers became a source of daily strength."
+                </blockquote>
+                <cite>- Sarah M., Breast Cancer Survivor</cite>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Crisis Resources</a>
+                    <a href="#">Healthcare Provider Info</a>
+                    <a href="#">Technical Support</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <a href="#">Story Guidelines</a>
+                    <a href="#">Community Rules</a>
+                    <a href="#">Report Content</a>
+                    <a href="#">Volunteer</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Privacy & Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Data Protection</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#">Medical Disclaimers</a>
+                    <a href="#">External Resources</a>
+                    <a href="#">Research Participation</a>
+                    <a href="#">About Us</a>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                <p>&copy; 2025 Healing Journeys. Not a substitute for professional medical care.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('loginModal')">&times;</span>
+            <h2>Welcome Back</h2>
+            <form>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+            <p style="text-align: center; margin-top: 1rem;">
+                Don't have an account? <a href="#" onclick="hideModal('loginModal'); showModal('signupModal');">Sign up here</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('signupModal')">&times;</span>
+            <h2>Join Our Community</h2>
+            <form>
+                <div class="form-group">
+                    <label>I am a:</label>
+                    <select>
+                        <option>Current patient</option>
+                        <option>Survivor</option>
+                        <option>Caregiver</option>
+                        <option>Family member</option>
+                        <option>Healthcare provider</option>
+                        <option>Supporter</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Create Password:</label>
+                    <input type="password" placeholder="Create a secure password">
+                </div>
+                <div class="form-group">
+                    <label>Display Name (optional):</label>
+                    <input type="text" placeholder="How you'd like to appear to others">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox"> I agree to the Terms of Service and Privacy Policy
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox"> I would like to receive encouraging messages from the community
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tools Modal -->
+    <div id="toolsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('toolsModal')">&times;</span>
+            <h2>Treatment Tracking Tools</h2>
+            <div style="display: grid; gap: 1rem;">
+                <div style="padding: 1rem; border: 1px solid #e0e0e0; border-radius: 8px;">
+                    <h4>📋 Chemo Session Checklist</h4>
+                    <p>Pre-made checklist for chemotherapy appointments</p>
+                </div>
+                <div style="padding: 1rem; border: 1px solid #e0e0e0; border-radius: 8px;">
+                    <h4>💊 Medication Tracker</h4>
+                    <p>Track medications, dosages, and timing</p>
+                </div>
+                <div style="padding: 1rem; border: 1px solid #e0e0e0; border-radius: 8px;">
+                    <h4>😊 Daily Mood Log</h4>
+                    <p>Record mood, energy, and side effects</p>
+                </div>
+                <div style="padding: 1rem; border: 1px solid #e0e0e0; border-radius: 8px;">
+                    <h4>🍎 Nutrition Planner</h4>
+                    <p>Meal planning and dietary tracking</p>
+                </div>
+            </div>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Access Tools (Login Required)</button>
+        </div>
+    </div>
+
+    <!-- Message Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('messageModal')">&times;</span>
+            <h2>Send an Encouraging Message</h2>
+            <form>
+                <div class="form-group">
+                    <label>Your message will be reviewed before posting to ensure it's supportive and appropriate.</label>
+                </div>
+                <div class="form-group">
+                    <label>Message:</label>
+                    <textarea rows="4" placeholder="Write your encouraging message here..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Sign as (optional):</label>
+                    <input type="text" placeholder="Your name or 'A friend' (leave blank for anonymous)">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox"> I confirm this message is positive and supportive
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Story Modal -->
+    <div id="storyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('storyModal')">&times;</span>
+            <h2>Share Your Story</h2>
+            <form>
+                <div class="form-group">
+                    <label>Story Title:</label>
+                    <input type="text" placeholder="Give your story a title">
+                </div>
+                <div class="form-group">
+                    <label>Category:</label>
+                    <select>
+                        <option>General Experience</option>
+                        <option>Breast Cancer</option>
+                        <option>Lung Cancer</option>
+                        <option>Childhood Cancer</option>
+                        <option>Life After Treatment</option>
+                        <option>Caregiver Experience</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Your Story:</label>
+                    <textarea rows="6" placeholder="Share your experience, insights, or words of encouragement..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Publishing Options:</label>
+                    <select>
+                        <option>Publish with my display name</option>
+                        <option>Publish anonymously</option>
+                        <option>Save as draft</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Share Story (Login Required)</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Appointment Modal -->
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('appointmentModal')">&times;</span>
+            <h2>Appointment Planner</h2>
+            <form>
+                <div class="form-group">
+                    <label>Appointment Type:</label>
+                    <select>
+                        <option>Chemotherapy</option>
+                        <option>Radiation</option>
+                        <option>Doctor Visit</option>
+                        <option>Lab Work</option>
+                        <option>Scan/Imaging</option>
+                        <option>Surgery</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date:</label>
+                    <input type="date">
+                </div>
+                <div class="form-group">
+                    <label>Time:</label>
+                    <input type="time">
+                </div>
+                <div class="form-group">
+                    <label>Location:</label>
+                    <input type="text" placeholder="Hospital or clinic name">
+                </div>
+                <div class="form-group">
+                    <label>Notes:</label>
+                    <textarea rows="3" placeholder="Questions to ask, items to bring, etc."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox"> Send me a reminder 24 hours before
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Save Appointment (Login Required)</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function hideModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submissions (placeholder functionality)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('This is a demo. In the full version, this would save your data securely.');
+            });
+        });
+    </script>
+</body>
+</html>
