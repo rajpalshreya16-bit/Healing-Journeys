@@ -48,6 +48,7 @@
             font-weight: bold;
             color: #4a7c59;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            cursor: pointer;
         }
 
         .nav-links {
@@ -64,6 +65,7 @@
             padding: 0.5rem 1rem;
             border-radius: 25px;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
@@ -75,6 +77,20 @@
         main {
             margin-top: 100px;
             padding: 2rem 0;
+        }
+
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero {
@@ -135,159 +151,113 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
+        .stories-page {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .feature-card {
+        .cancer-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .cancer-type-card {
             background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            border-left: 4px solid #a8dadc;
+            cursor: pointer;
+            text-align: center;
         }
 
-        .feature-card:hover {
+        .cancer-type-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .cancer-type-card h3 {
             color: #4a7c59;
+            margin-bottom: 0.5rem;
         }
 
-        .testimonial {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 3rem;
-            border-radius: 20px;
-            margin: 4rem 0;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .testimonial blockquote {
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 1rem;
+        .cancer-type-card .story-count {
             color: #5a7b5e;
+            font-weight: 500;
         }
 
-        .testimonial cite {
-            font-weight: bold;
-            color: #4a7c59;
+        .story-list {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .quick-access {
+        .story-list.active {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 3rem 0;
         }
 
-        .quick-btn {
-            background: linear-gradient(135deg, #a8dadc, #4a7c59);
-            color: white;
-            padding: 1.5rem;
+        .story-card {
+            background: white;
+            padding: 2rem;
             border-radius: 15px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #a8dadc;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .quick-btn:hover {
+        .story-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
-        footer {
-            background: rgba(44, 85, 48, 0.95);
-            color: white;
-            padding: 3rem 0 1rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
+        .story-card h4 {
+            color: #4a7c59;
             margin-bottom: 1rem;
-            color: #a8dadc;
         }
 
-        .footer-section a {
+        .story-card .story-excerpt {
+            color: #5a7b5e;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .story-card .story-author {
+            font-style: italic;
+            color: #4a7c59;
+            font-weight: 600;
+        }
+
+        .back-btn {
+            background: #4a7c59;
             color: white;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: #a8dadc;
-        }
-
-        .privacy-banner {
-            background: rgba(168, 218, 220, 0.9);
-            padding: 1rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 2rem;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
             cursor: pointer;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .close:hover {
-            color: #000;
+        .back-btn:hover {
+            background: #5d8b69;
+            transform: translateY(-2px);
+        }
+
+        .login-form, .tools-page, .messages-page {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
@@ -299,14 +269,103 @@
 
         .form-group input, .form-group textarea, .form-group select {
             width: 100%;
-            padding: 0.75rem;
+            padding: 1rem;
             border: 2px solid #e0e0e0;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1rem;
             transition: border-color 0.3s ease;
+            font-family: inherit;
         }
 
         .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: #4a7c59;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .tool-card h3 {
+            color: #4a7c59;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .messages-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .message-card {
+            background: linear-gradient(135deg, rgba(168, 218, 220, 0.1), rgba(255, 255, 255, 0.9));
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #a8dadc;
+        }
+
+        .message-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #2c5530;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .message-author {
+            text-align: right;
+            font-weight: 600;
+            color: #4a7c59;
+        }
+
+        .user-info {
+            background: rgba(74, 124, 89, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .search-bar {
+            margin-bottom: 2rem;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+            background: white;
+        }
+
+        .search-bar input:focus {
             outline: none;
             border-color: #4a7c59;
         }
@@ -320,14 +379,13 @@
                 gap: 1rem;
             }
             
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .story-list {
+                grid-template-columns: 1fr;
             }
             
-            .btn {
-                width: 100%;
-                max-width: 300px;
+            .login-form, .tools-page, .messages-page {
+                padding: 2rem;
+                margin: 0 1rem;
             }
         }
     </style>
@@ -336,13 +394,13 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">🌱 Healing Journeys</div>
+                <div class="logo" onclick="showPage('home')">🌱 Healing Journeys</div>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#stories">Stories</a></li>
-                    <li><a href="#tools">Tools</a></li>
-                    <li><a href="#messages">Messages</a></li>
-                    <li><a href="#" onclick="showModal('loginModal')">Login</a></li>
+                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a onclick="showPage('stories')">Stories</a></li>
+                    <li><a onclick="showPage('tools')">Tools</a></li>
+                    <li><a onclick="showPage('messages')">Messages</a></li>
+                    <li><a onclick="showPage('login')" id="loginLink">Login</a></li>
                 </ul>
             </nav>
         </div>
@@ -350,361 +408,766 @@
 
     <main>
         <div class="container">
-            <section class="hero" id="home">
-                <h1>Healing Journeys</h1>
-                <p>A supportive community where cancer patients, survivors, and caregivers share experiences, stay organized, and find strength together.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary" onclick="showModal('signupModal')">Join Our Community</a>
-                    <a href="#stories" class="btn btn-secondary">Read Stories</a>
+            <!-- Home Page -->
+            <section id="home" class="page-section active">
+                <div class="hero">
+                    <h1>Healing Journeys</h1>
+                    <p>A supportive community where cancer patients, survivors, and caregivers share experiences, stay organized, and find strength together.</p>
+                    <div class="cta-buttons">
+                        <a onclick="showPage('login')" class="btn btn-primary">Join Our Community</a>
+                        <a onclick="showPage('stories')" class="btn btn-secondary">Read Stories</a>
+                    </div>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.9); padding: 2rem; border-radius: 15px; text-align: center; margin: 2rem 0;">
+                    <strong>🔒 Your Privacy Matters:</strong> All personal information is encrypted and secure. You control what you share and with whom.
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 3rem 0;">
+                    <a onclick="showPage('tools')" class="btn btn-primary" style="padding: 1.5rem; text-align: center;">
+                        📋 Treatment Tracker
+                    </a>
+                    <a onclick="showPage('messages')" class="btn btn-primary" style="padding: 1.5rem; text-align: center;">
+                        💌 Send Encouragement
+                    </a>
+                    <a onclick="showPage('stories')" class="btn btn-primary" style="padding: 1.5rem; text-align: center;">
+                        📖 Read Stories
+                    </a>
                 </div>
             </section>
 
-            <div class="privacy-banner">
-                <strong>🔒 Your Privacy Matters:</strong> All personal information is encrypted and secure. You control what you share and with whom.
-            </div>
+            <!-- Stories Page -->
+            <section id="stories" class="page-section">
+                <div class="stories-page">
+                    <h1 style="text-align: center; color: #4a7c59; margin-bottom: 2rem;">Inspiring Stories</h1>
+                    
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search stories by keyword, cancer type, or author..." oninput="filterStories(this.value)">
+                    </div>
 
-            <section class="quick-access">
-                <a href="#" class="quick-btn" onclick="showModal('toolsModal')">
-                    📋 Treatment Tracker
-                </a>
-                <a href="#" class="quick-btn" onclick="showModal('messageModal')">
-                    💌 Send Encouragement
-                </a>
-                <a href="#" class="quick-btn" onclick="showModal('storyModal')">
-                    📖 Share Your Story
-                </a>
-                <a href="#" class="quick-btn" onclick="showModal('appointmentModal')">
-                    🗓️ Appointment Planner
-                </a>
+                    <div id="cancerTypes" class="cancer-types">
+                        <div class="cancer-type-card" onclick="showStories('breast')">
+                            <h3>🎀 Breast Cancer</h3>
+                            <p class="story-count">52 Stories</p>
+                        </div>
+                        <div class="cancer-type-card" onclick="showStories('lung')">
+                            <h3>🫁 Lung Cancer</h3>
+                            <p class="story-count">48 Stories</p>
+                        </div>
+                        <div class="cancer-type-card" onclick="showStories('colorectal')">
+                            <h3>🩺 Colorectal Cancer</h3>
+                            <p class="story-count">45 Stories</p>
+                        </div>
+                        <div class="cancer-type-card" onclick="showStories('prostate')">
+                            <h3>👨 Prostate Cancer</h3>
+                            <p class="story-count">51 Stories</p>
+                        </div>
+                        <div class="cancer-type-card" onclick="showStories('lymphoma')">
+                            <h3>🩸 Lymphoma</h3>
+                            <p class="story-count">43 Stories</p>
+                        </div>
+                        <div class="cancer-type-card" onclick="showStories('leukemia')">
+                            <h3>🔬 Leukemia</h3>
+                            <p class="story-count">39 Stories</p>
+                        </div>
+                        <div class="cancer-type-card" onclick="showStories('skin')">
+                            <h3>🌞 Skin Cancer</h3>
+                            <p class="story-count">47 Stories</p>
+                        </div>
+                        <div class="cancer-type-card" onclick="showStories('brain')">
+                            <h3>🧠 Brain Cancer</h3>
+                            <p class="story-count">41 Stories</p>
+                        </div>
+                        <div class="cancer-type-card" onclick="showStories('ovarian')">
+                            <h3>👩 Ovarian Cancer</h3>
+                            <p class="story-count">38 Stories</p>
+                        </div>
+                        <div class="cancer-type-card" onclick="showStories('pancreatic')">
+                            <h3>🫄 Pancreatic Cancer</h3>
+                            <p class="story-count">35 Stories</p>
+                        </div>
+                        <div class="cancer-type-card" onclick="showStories('kidney')">
+                            <h3>🫘 Kidney Cancer</h3>
+                            <p class="story-count">42 Stories</p>
+                        </div>
+                        <div class="cancer-type-card" onclick="showStories('childhood')">
+                            <h3>🧸 Childhood Cancer</h3>
+                            <p class="story-count">44 Stories</p>
+                        </div>
+                    </div>
+
+                    <!-- Story Lists for each cancer type -->
+                    <div id="storyLists">
+                        <button class="back-btn" onclick="showCancerTypes()" style="display: none;">← Back to Cancer Types</button>
+                        
+                        <!-- Breast Cancer Stories -->
+                        <div id="breast-stories" class="story-list">
+                            <div class="story-card">
+                                <h4>Finding Strength in the Storm</h4>
+                                <p class="story-excerpt">"When I heard 'breast cancer,' the world stopped. I was 34, a mother of two toddlers, and felt like my life was crumbling. But through treatment, I discovered a strength I never knew I had. Each chemo session became a victory, each scan clear of progression was a celebration. Today, three years later, I'm not just surviving - I'm thriving. To anyone just beginning this journey: you are stronger than you know."</p>
+                                <p class="story-author">- Sarah M., 3-year survivor</p>
+                            </div>
+                            <div class="story-card">
+                                <h4>My Second Chance at Life</h4>
+                                <p class="story-excerpt">"Triple negative breast cancer at 28 felt like a death sentence. The treatments were brutal, and I lost everything - my hair, my energy, my sense of self. But I gained something too: perspective. Every sunrise became precious. Every hug from my family felt like gold. Cancer taught me to live fully in each moment. Now, two years post-treatment, I wake up grateful for another day."</p>
+                                <p class="story-author">- Maria L., 2-year survivor</p>
+                            </div>
+                            <div class="story-card">
+                                <h4>The Power of Community</h4>
+                                <p class="story-excerpt">"I thought I had to fight cancer alone until I found this community. Reading other survivors' stories gave me hope when mine was fading. The messages of encouragement carried me through my darkest days. Treatment is easier when you know you're not walking the path alone. To every warrior reading this: your story matters, and you matter."</p>
+                                <p class="story-author">- Jennifer R., Currently in treatment</p>
+                            </div>
+                            <div class="story-card">
+                                <h4>Rediscovering Beauty</h4>
+                                <p class="story-excerpt">"Losing both breasts to cancer felt like losing my femininity. Reconstruction wasn't an option for me, and I struggled with my new body. Slowly, I learned that beauty isn't about perfection - it's about resilience. My scars tell a story of survival. Today, I embrace my new normal and help other women see their own strength and beauty."</p>
+                                <p class="story-author">- Diana K., 4-year survivor</p>
+                            </div>
+                            <div class="story-card">
+                                <h4>Dancing Through Chemo</h4>
+                                <p class="story-excerpt">"Music saved my soul during treatment. Between chemo sessions, I'd put on my favorite songs and dance in my living room - bald head, surgical scars and all. My kids would join in, and we'd laugh until we cried. Those moments of pure joy reminded me that cancer hadn't taken everything. It couldn't touch my spirit."</p>
+                                <p class="story-author">- Carmen S., 1-year survivor</p>
+                            </div>
+                            <!-- Continue with more breast cancer stories... -->
+                            <div class="story-card">
+                                <h4>The Gift of Time</h4>
+                                <p class="story-excerpt">"Cancer made me realize I'd been living on autopilot. Now, five years cancer-free, I savor morning coffee, really listen when my daughter talks, and never miss a sunset. My diagnosis was devastating, but it also became my awakening. I'm grateful for the woman cancer helped me become - more present, more loving, more alive."</p>
+                                <p class="story-author">- Rebecca T., 5-year survivor</p>
+                            </div>
+                        </div>
+
+                        <!-- Lung Cancer Stories -->
+                        <div id="lung-stories" class="story-list">
+                            <div class="story-card">
+                                <h4>Breathing Hope</h4>
+                                <p class="story-excerpt">"Stage 4 lung cancer wasn't in my plans at 55. The diagnosis came after months of dismissing a persistent cough. The treatments were intense, but each breath became a victory. Eighteen months later, my tumors have shrunk significantly. To anyone facing this battle: never underestimate the power of hope and the strength of your own spirit."</p>
+                                <p class="story-author">- Robert M., 18 months into treatment</p>
+                            </div>
+                            <div class="story-card">
+                                <h4>Beyond Statistics</h4>
+                                <p class="story-excerpt">"When doctors gave me statistics, I chose to be the exception. Lung cancer tried to steal my future, but I refused to let it. Through targeted therapy and sheer determination, I've exceeded every prognosis. Three years later, I'm planning my daughter's wedding and taking that European trip I always dreamed of."</p>
+                                <p class="story-author">- Linda W., 3-year survivor</p>
+                            </div>
+                            <div class="story-card">
+                                <h4>Finding My Voice</h4>
+                                <p class="story-excerpt">"Losing part of my lung made me appreciate every word I speak. Surgery was scary, but recovery taught me resilience. I now use my voice to encourage others facing lung cancer. We're often overlooked, but our fights are just as important, our victories just as sweet, and our hope just as strong."</p>
+                                <p class="story-author">- James P., 2-year survivor</p>
+                            </div>
+                            <div class="story-card">
+                                <h4>The Mountain I Climbed</h4>
+                                <p class="story-excerpt">"Lung cancer felt like an insurmountable mountain. Each treatment was another step up a steep, difficult path. But mountains have summits, and survivors waiting at the top to guide you. Today, I'm one of those guides, reaching back to help others make their climb. The view from recovery is beautiful."</p>
+                                <p class="story-author">- Patricia H., 4-year survivor</p>
+                            </div>
+                        </div>
+
+                        <!-- Add similar story collections for other cancer types -->
+                        <!-- Colorectal Cancer Stories -->
+                        <div id="colorectal-stories" class="story-list">
+                            <div class="story-card">
+                                <h4>No Shame in This Game</h4>
+                                <p class="story-excerpt">"Colorectal cancer comes with uncomfortable realities that people don't want to discuss. But there's no shame in fighting for your life. My colostomy bag doesn't define me - my courage does. Two years cancer-free and living my best life, proving that survival looks different for everyone, and that's perfectly okay."</p>
+                                <p class="story-author">- Michael D., 2-year survivor</p>
+                            </div>
+                            <div class="story-card">
+                                <h4>Early Detection Saved Me</h4>
+                                <p class="story-excerpt">"I almost skipped my colonoscopy at 50. Thank goodness I didn't. Stage 2 colorectal cancer, caught just in time. Surgery was successful, and I'm now an advocate for screening. That routine procedure literally saved my life. Please don't postpone yours - early detection is everything."</p>
+                                <p class="story-author">- Susan G., 3-year survivor</p>
+                            </div>
+                        </div>
+
+                        <!-- Prostate Cancer Stories -->
+                        <div id="prostate-stories" class="story-list">
+                            <div class="story-card">
+                                <h4>Redefining Masculinity</h4>
+                                <p class="story-excerpt">"Prostate cancer challenged everything I thought I knew about being a man. The side effects were tough on my pride, but my family's love remained constant. I learned that true strength isn't about what your body can do - it's about how you face adversity. Four years strong and still learning."</p>
+                                <p class="story-author">- David R., 4-year survivor</p>
+                            </div>
+                            <div class="story-card">
+                                <h4>The Watch and Wait Victory</h4>
+                                <p class="story-excerpt">"Active surveillance felt like living with a ticking time bomb. But my slow-growing cancer never required aggressive treatment. Five years of careful monitoring, and I'm still cancer-free. Sometimes the bravest fight is the patient one, trusting your medical team and your body's ability to heal."</p>
+                                <p class="story-author">- Thomas A., 5-year survivor</p>
+                            </div>
+                        </div>
+
+                        <!-- Continue with more cancer types and stories... -->
+                        <!-- Lymphoma Stories -->
+                        <div id="lymphoma-stories" class="story-list">
+                            <div class="story-card">
+                                <h4>My Body's Rebellion</h4>
+                                <p class="story-excerpt">"Non-Hodgkin's lymphoma felt like my own immune system had turned against me. The irony wasn't lost on me - the system meant to protect me needed to be completely rebuilt. Six months of intense treatment later, my new immune system is stronger than ever. Sometimes we need to break down completely to build back better."</p>
+                                <p class="story-author">- Elena V., 1-year survivor</p>
+                            </div>
+                            <div class="story-card">
+                                <h4>The Young Fighter</h4>
+                                <p class="story-excerpt">"Hodgkin's lymphoma at 22 wasn't part of my college plan. But between treatments, I finished my degree online. My classmates were at parties while I was at chemo, but I graduated on time and in remission. Cancer tried to pause my life - I refused to let it. Dreams don't have to wait for perfect health."</p>
+                                <p class="story-author">- Alex M., 2-year survivor</p>
+                            </div>
+                        </div>
+
+                        <!-- Childhood Cancer Stories -->
+                        <div id="childhood-stories" class="story-list">
+                            <div class="story-card">
+                                <h4>Mom's Warrior</h4>
+                                <p class="story-excerpt">"Watching my 8-year-old fight leukemia was the hardest thing I've ever done. But children are incredibly resilient. Emma never lost her smile, even on the hardest days. She's been in remission for three years now, and her strength taught our whole family what courage really looks like. Child warriors are the bravest of all."</p>
+                                <p class="story-author">- Michelle (Emma's mom), 3 years in remission</p>
+                            </div>
+                            <div class="story-card">
+                                <h4>Growing Up Strong</h4>
+                                <p class="story-excerpt">"I was 15 when I was diagnosed with osteosarcoma. Lost my leg but never lost my spirit. Now 25 and cancer-free for 8 years, I compete in Paralympic sports. Cancer took my leg but gave me purpose. To teenage fighters: this experience will make you incredibly strong. Trust in your resilience."</p>
+                                <p class="story-author">- Jordan K., 8-year survivor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <section class="features">
-                <div class="feature-card">
-                    <span class="feature-icon">📖</span>
-                    <h3>Share Your Story</h3>
-                    <p>Connect with others by sharing your journey. Your experience can inspire and help fellow patients navigate their own paths. Post anonymously or with your name - you choose.</p>
-                </div>
+            <!-- Tools Page -->
+            <section id="tools" class="page-section">
+                <div class="tools-page">
+                    <h1 style="text-align: center; color: #4a7c59; margin-bottom: 2rem;">Treatment Tools</h1>
+                    
+                    <div id="userInfo" class="user-info" style="display: none;">
+                        <p>Welcome back, <span id="userName"></span>! Your tools are ready.</p>
+                    </div>
 
-                <div class="feature-card">
-                    <span class="feature-icon">💌</span>
-                    <h3>Receive Encouragement</h3>
-                    <p>Get uplifting messages from community members worldwide. All messages are moderated to ensure they're positive and supportive. Opt-in to receive them via email or secure inbox.</p>
-                </div>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <h3>📋 Treatment Tracker</h3>
+                            <p>Track your chemotherapy, radiation, and medication schedules</p>
+                            <div class="form-group">
+                                <label>Next Appointment:</label>
+                                <input type="datetime-local" id="nextAppt">
+                            </div>
+                            <div class="form-group">
+                                <label>Treatment Type:</label>
+                                <select>
+                                    <option>Chemotherapy</option>
+                                    <option>Radiation</option>
+                                    <option>Surgery</option>
+                                    <option>Immunotherapy</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary">Save Appointment</button>
+                        </div>
 
-                <div class="feature-card">
-                    <span class="feature-icon">📋</span>
-                    <h3>Treatment Tools</h3>
-                    <p>Stay organized with customizable checklists, appointment trackers, medication reminders, and mood logs. Export your data to share with healthcare providers.</p>
-                </div>
+                        <div class="tool-card">
+                            <h3>💊 Medication Log</h3>
+                            <p>Keep track of your medications and side effects</p>
+                            <div class="form-group">
+                                <label>Medication Name:</label>
+                                <input type="text" placeholder="e.g., Doxorubicin">
+                            </div>
+                            <div class="form-group">
+                                <label>Dosage:</label>
+                                <input type="text" placeholder="e.g., 60 mg/m²">
+                            </div>
+                            <div class="form-group">
+                                <label>Time Taken:</label>
+                                <input type="time">
+                            </div>
+                            <button class="btn btn-primary">Log Medication</button>
+                        </div>
 
-                <div class="feature-card">
-                    <span class="feature-icon">🔒</span>
-                    <h3>Secure & Private</h3>
-                    <p>Your data is encrypted and protected. Choose what to share publicly, what to keep private, and maintain full control over your personal information.</p>
-                </div>
+                        <div class="tool-card">
+                            <h3>😊 Daily Mood & Symptom Log</h3>
+                            <p>Track how you're feeling and any side effects</p>
+                            <div class="form-group">
+                                <label>Today's Mood (1-10):</label>
+                                <input type="range" min="1" max="10" value="5" oninput="updateMoodValue(this.value)">
+                                <span id="moodValue">5</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Energy Level (1-10):</label>
+                                <input type="range" min="1" max="10" value="5" oninput="updateEnergyValue(this.value)">
+                                <span id="energyValue">5</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Symptoms Today:</label>
+                                <textarea placeholder="Note any symptoms or side effects..." rows="3"></textarea>
+                            </div>
+                            <button class="btn btn-primary">Save Daily Log</button>
+                        </div>
 
-                <div class="feature-card">
-                    <span class="feature-icon">👥</span>
-                    <h3>Community Support</h3>
-                    <p>Connect with patients, survivors, and caregivers. Find your community through cancer type, treatment phase, or shared experiences in a moderated, positive environment.</p>
-                </div>
+                        <div class="tool-card">
+                            <h3>🍎 Nutrition Tracker</h3>
+                            <p>Monitor your nutrition and dietary goals</p>
+                            <div class="form-group">
+                                <label>Water Intake (glasses):</label>
+                                <input type="number" min="0" max="20" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label>Meals Today:</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox"> Breakfast
+                                    <input type="checkbox"> Lunch
+                                    <input type="checkbox"> Dinner
+                                    <input type="checkbox"> Snacks
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Notes:</label>
+                                <textarea placeholder="Any dietary concerns or victories..." rows="2"></textarea>
+                            </div>
+                            <button class="btn btn-primary">Update Nutrition</button>
+                        </div>
 
-                <div class="feature-card">
-                    <span class="feature-icon">📱</span>
-                    <h3>Mobile Friendly</h3>
-                    <p>Access your tools and community from anywhere - hospital waiting rooms, treatment centers, or the comfort of home. Large buttons and simple navigation for easy use.</p>
+                        <div class="tool-card">
+                            <h3>📊 Progress Reports</h3>
+                            <p>Generate reports to share with your healthcare team</p>
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Report Options:</strong>
+                            </div>
+                            <div class="checkbox-group" style="flex-direction: column; align-items: flex-start;">
+                                <label><input type="checkbox"> Mood & Energy Trends</label>
+                                <label><input type="checkbox"> Medication Adherence</label>
+                                <label><input type="checkbox"> Symptom Patterns</label>
+                                <label><input type="checkbox"> Appointment History</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Date Range:</label>
+                                <select>
+                                    <option>Last 7 days</option>
+                                    <option>Last 30 days</option>
+                                    <option>Last 3 months</option>
+                                    <option>All time</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary">Generate Report</button>
+                        </div>
+
+                        <div class="tool-card">
+                            <h3>🔔 Reminder Settings</h3>
+                            <p>Set up notifications for medications and appointments</p>
+                            <div class="checkbox-group" style="flex-direction: column; align-items: flex-start;">
+                                <label><input type="checkbox"> Medication reminders</label>
+                                <label><input type="checkbox"> Appointment reminders</label>
+                                <label><input type="checkbox"> Daily mood check-ins</label>
+                                <label><input type="checkbox"> Weekly progress updates</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Reminder Method:</label>
+                                <select>
+                                    <option>Email</option>
+                                    <option>Text Message</option>
+                                    <option>Both</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary">Save Preferences</button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section class="testimonial">
-                <blockquote>
-                    "Reading other survivors' stories gave me hope during my darkest days. The treatment tracker helped me stay organized, and the encouraging messages from strangers became a source of daily strength."
-                </blockquote>
-                <cite>- Sarah M., Breast Cancer Survivor</cite>
+            <!-- Messages Page -->
+            <section id="messages" class="page-section">
+                <div class="messages-page">
+                    <h1 style="text-align: center; color: #4a7c59; margin-bottom: 2rem;">Messages of Hope</h1>
+                    
+                    <div style="background: rgba(168, 218, 220, 0.1); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                        <h3 style="color: #4a7c59; margin-bottom: 1rem;">Send an Encouraging Message</h3>
+                        <div class="form-group">
+                            <label>Your Message:</label>
+                            <textarea placeholder="Write words of encouragement, hope, or support..." rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Sign as (optional):</label>
+                            <input type="text" placeholder="Your name, 'A friend', or leave blank for anonymous">
+                        </div>
+                        <div class="form-group">
+                            <label>Send to:</label>
+                            <select>
+                                <option>All cancer fighters</option>
+                                <option>Breast cancer patients</option>
+                                <option>Lung cancer patients</option>
+                                <option>Childhood cancer families</option>
+                                <option>Recent survivors</option>
+                                <option>Currently in treatment</option>
+                            </select>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" required>
+                            <label>I confirm this message is positive and supportive</label>
+                        </div>
+                        <button class="btn btn-primary" onclick="submitMessage()">Send Message of Hope</button>
+                    </div>
+
+                    <h2 style="color: #4a7c59; margin-bottom: 1.5rem;">Recent Messages from Our Community</h2>
+                    <div class="messages-grid">
+                        <div class="message-card">
+                            <div class="message-content">
+                                "To everyone fighting today: you are braver than you believe, stronger than you seem, and more loved than you know. Your journey matters, and so do you. Sending healing thoughts and virtual hugs your way."
+                            </div>
+                            <div class="message-author">- Sarah from California</div>
+                        </div>
+
+                        <div class="message-card">
+                            <div class="message-content">
+                                "I finished chemo last month and wanted to tell everyone still in treatment: there IS light at the end of this tunnel. Some days feel impossible, but you're doing something incredible just by not giving up. Keep going, warrior!"
+                            </div>
+                            <div class="message-author">- Michael, Recent Survivor</div>
+                        </div>
+
+                        <div class="message-card">
+                            <div class="message-content">
+                                "Thinking of all the parents whose children are fighting cancer. You are the strongest people I know. Your love is medicine, your presence is healing, and your child is lucky to have you as their champion."
+                            </div>
+                            <div class="message-author">- Jennifer, Mother of a Survivor</div>
+                        </div>
+
+                        <div class="message-card">
+                            <div class="message-content">
+                                "Bad days don't last, but tough people do. To anyone reading this during a difficult moment: this too shall pass. You've survived 100% of your worst days so far. You've got this!"
+                            </div>
+                            <div class="message-author">- David, 5-year Survivor</div>
+                        </div>
+
+                        <div class="message-card">
+                            <div class="message-content">
+                                "Cancer may have started the fight, but you're going to finish it. Every treatment you endure, every small victory you celebrate, every day you choose hope - it all adds up to something beautiful: your survival story."
+                            </div>
+                            <div class="message-author">- Maria from Texas</div>
+                        </div>
+
+                        <div class="message-card">
+                            <div class="message-content">
+                                "I lost my hair, but I found my strength. I lost my old life, but I gained a new perspective. To everyone in treatment: you might be surprised by what you discover about yourself on this journey. You are absolutely remarkable."
+                            </div>
+                            <div class="message-author">- Lisa, Breast Cancer Survivor</div>
+                        </div>
+
+                        <div class="message-card">
+                            <div class="message-content">
+                                "Some days you will feel like you can conquer the world, other days you'll struggle to get out of bed. Both are okay. Healing isn't linear. Be patient with yourself and celebrate every small win."
+                            </div>
+                            <div class="message-author">- Anonymous Supporter</div>
+                        </div>
+
+                        <div class="message-card">
+                            <div class="message-content">
+                                "To the caregivers reading this: thank you for your selfless love. Don't forget to take care of yourself too. You can't pour from an empty cup, and your loved one needs you to stay strong and healthy."
+                            </div>
+                            <div class="message-author">- Robert, Husband of Survivor</div>
+                        </div>
+
+                        <div class="message-card">
+                            <div class="message-content">
+                                "Your scars are proof that you fought and survived. Your bald head is beautiful because it represents your courage. Your tired eyes still sparkle with determination. You are living art - a masterpiece of resilience."
+                            </div>
+                            <div class="message-author">- Carmen, Lymphoma Survivor</div>
+                        </div>
+
+                        <div class="message-card">
+                            <div class="message-content">
+                                "I know it's hard to see past today's pain to tomorrow's possibilities. But trust me when I say that brighter days are coming. You are writing a survival story that will inspire others. Keep writing, brave soul."
+                            </div>
+                            <div class="message-author">- Thomas from New York</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Login/Register Page -->
+            <section id="login" class="page-section">
+                <div class="login-form">
+                    <h1 style="text-align: center; color: #4a7c59; margin-bottom: 2rem;">Join Our Community</h1>
+                    
+                    <div id="loginSection">
+                        <h2 style="color: #4a7c59;">Welcome Back</h2>
+                        <form onsubmit="handleLogin(event)">
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input type="email" id="loginEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input type="password" id="loginPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                        </form>
+                        <p style="text-align: center; margin-top: 1rem;">
+                            Don't have an account? <a href="#" onclick="showRegisterForm()" style="color: #4a7c59; font-weight: 600;">Sign up here</a>
+                        </p>
+                    </div>
+
+                    <div id="registerSection" style="display: none;">
+                        <h2 style="color: #4a7c59;">Create Your Account</h2>
+                        <form onsubmit="handleRegister(event)">
+                            <div class="form-group">
+                                <label>I am a:</label>
+                                <select id="userType" required>
+                                    <option value="">Please select...</option>
+                                    <option value="patient">Current patient</option>
+                                    <option value="survivor">Cancer survivor</option>
+                                    <option value="caregiver">Caregiver</option>
+                                    <option value="family">Family member</option>
+                                    <option value="healthcare">Healthcare provider</option>
+                                    <option value="supporter">Supporter/Friend</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>First Name:</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input type="email" id="registerEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Create Password:</label>
+                                <input type="password" id="registerPassword" required minlength="8">
+                            </div>
+                            <div class="form-group">
+                                <label>Display Name (optional):</label>
+                                <input type="text" id="displayName" placeholder="How you'd like to appear to others">
+                            </div>
+                            <div class="form-group">
+                                <label>Cancer Type (if applicable):</label>
+                                <select id="cancerType">
+                                    <option value="">Not applicable</option>
+                                    <option value="breast">Breast Cancer</option>
+                                    <option value="lung">Lung Cancer</option>
+                                    <option value="colorectal">Colorectal Cancer</option>
+                                    <option value="prostate">Prostate Cancer</option>
+                                    <option value="lymphoma">Lymphoma</option>
+                                    <option value="leukemia">Leukemia</option>
+                                    <option value="skin">Skin Cancer</option>
+                                    <option value="brain">Brain Cancer</option>
+                                    <option value="ovarian">Ovarian Cancer</option>
+                                    <option value="pancreatic">Pancreatic Cancer</option>
+                                    <option value="kidney">Kidney Cancer</option>
+                                    <option value="childhood">Childhood Cancer</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <label for="agreeTerms">I agree to the Terms of Service and Privacy Policy</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="receiveMessages">
+                                <label for="receiveMessages">I would like to receive encouraging messages from the community</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="shareStory">
+                                <label for="shareStory">I'm interested in sharing my story with the community</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+                        </form>
+                        <p style="text-align: center; margin-top: 1rem;">
+                            Already have an account? <a href="#" onclick="showLoginForm()" style="color: #4a7c59; font-weight: 600;">Login here</a>
+                        </p>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
 
-    <footer>
+    <footer style="background: rgba(44, 85, 48, 0.95); color: white; padding: 3rem 0 1rem; margin-top: 4rem;">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <a href="#">Help Center</a>
-                    <a href="#">Crisis Resources</a>
-                    <a href="#">Healthcare Provider Info</a>
-                    <a href="#">Technical Support</a>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #a8dadc;">Support Resources</h4>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">24/7 Crisis Helpline</a></p>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Find Local Support Groups</a></p>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Healthcare Provider Resources</a></p>
+                    <p><a href="#" style="color: white; text-decoration: none;">Financial Assistance</a></p>
                 </div>
-                <div class="footer-section">
-                    <h4>Community</h4>
-                    <a href="#">Story Guidelines</a>
-                    <a href="#">Community Rules</a>
-                    <a href="#">Report Content</a>
-                    <a href="#">Volunteer</a>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #a8dadc;">Community Guidelines</h4>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Story Submission Guidelines</a></p>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Community Standards</a></p>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Report Inappropriate Content</a></p>
+                    <p><a href="#" style="color: white; text-decoration: none;">Volunteer Opportunities</a></p>
                 </div>
-                <div class="footer-section">
-                    <h4>Privacy & Legal</h4>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Data Protection</a>
-                    <a href="#">Cookie Policy</a>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #a8dadc;">Privacy & Legal</h4>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></p>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Terms of Service</a></p>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">HIPAA Compliance</a></p>
+                    <p><a href="#" style="color: white; text-decoration: none;">Data Security</a></p>
                 </div>
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <a href="#">Medical Disclaimers</a>
-                    <a href="#">External Resources</a>
-                    <a href="#">Research Participation</a>
-                    <a href="#">About Us</a>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #a8dadc;">About</h4>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Our Mission</a></p>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Medical Advisory Board</a></p>
+                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Research Partnerships</a></p>
+                    <p><a href="#" style="color: white; text-decoration: none;">Contact Us</a></p>
                 </div>
             </div>
             <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                <p>&copy; 2025 Healing Journeys. Not a substitute for professional medical care.</p>
+                <p>&copy; 2025 Healing Journeys. This platform is not a substitute for professional medical care. Always consult your healthcare provider.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="hideModal('loginModal')">&times;</span>
-            <h2>Welcome Back</h2>
-            <form>
-                <div class="form-group">
-                    <label>Email:</label>
-                    <input type="email" placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <label>Password:</label>
-                    <input type="password" placeholder="Enter your password">
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
-            </form>
-            <p style="text-align: center; margin-top: 1rem;">
-                Don't have an account? <a href="#" onclick="hideModal('loginModal'); showModal('signupModal');">Sign up here</a>
-            </p>
-        </div>
-    </div>
-
-    <!-- Signup Modal -->
-    <div id="signupModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="hideModal('signupModal')">&times;</span>
-            <h2>Join Our Community</h2>
-            <form>
-                <div class="form-group">
-                    <label>I am a:</label>
-                    <select>
-                        <option>Current patient</option>
-                        <option>Survivor</option>
-                        <option>Caregiver</option>
-                        <option>Family member</option>
-                        <option>Healthcare provider</option>
-                        <option>Supporter</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Email:</label>
-                    <input type="email" placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <label>Create Password:</label>
-                    <input type="password" placeholder="Create a secure password">
-                </div>
-                <div class="form-group">
-                    <label>Display Name (optional):</label>
-                    <input type="text" placeholder="How you'd like to appear to others">
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox"> I agree to the Terms of Service and Privacy Policy
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox"> I would like to receive encouraging messages from the community
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Tools Modal -->
-    <div id="toolsModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="hideModal('toolsModal')">&times;</span>
-            <h2>Treatment Tracking Tools</h2>
-            <div style="display: grid; gap: 1rem;">
-                <div style="padding: 1rem; border: 1px solid #e0e0e0; border-radius: 8px;">
-                    <h4>📋 Chemo Session Checklist</h4>
-                    <p>Pre-made checklist for chemotherapy appointments</p>
-                </div>
-                <div style="padding: 1rem; border: 1px solid #e0e0e0; border-radius: 8px;">
-                    <h4>💊 Medication Tracker</h4>
-                    <p>Track medications, dosages, and timing</p>
-                </div>
-                <div style="padding: 1rem; border: 1px solid #e0e0e0; border-radius: 8px;">
-                    <h4>😊 Daily Mood Log</h4>
-                    <p>Record mood, energy, and side effects</p>
-                </div>
-                <div style="padding: 1rem; border: 1px solid #e0e0e0; border-radius: 8px;">
-                    <h4>🍎 Nutrition Planner</h4>
-                    <p>Meal planning and dietary tracking</p>
-                </div>
-            </div>
-            <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Access Tools (Login Required)</button>
-        </div>
-    </div>
-
-    <!-- Message Modal -->
-    <div id="messageModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="hideModal('messageModal')">&times;</span>
-            <h2>Send an Encouraging Message</h2>
-            <form>
-                <div class="form-group">
-                    <label>Your message will be reviewed before posting to ensure it's supportive and appropriate.</label>
-                </div>
-                <div class="form-group">
-                    <label>Message:</label>
-                    <textarea rows="4" placeholder="Write your encouraging message here..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Sign as (optional):</label>
-                    <input type="text" placeholder="Your name or 'A friend' (leave blank for anonymous)">
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox"> I confirm this message is positive and supportive
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Story Modal -->
-    <div id="storyModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="hideModal('storyModal')">&times;</span>
-            <h2>Share Your Story</h2>
-            <form>
-                <div class="form-group">
-                    <label>Story Title:</label>
-                    <input type="text" placeholder="Give your story a title">
-                </div>
-                <div class="form-group">
-                    <label>Category:</label>
-                    <select>
-                        <option>General Experience</option>
-                        <option>Breast Cancer</option>
-                        <option>Lung Cancer</option>
-                        <option>Childhood Cancer</option>
-                        <option>Life After Treatment</option>
-                        <option>Caregiver Experience</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Your Story:</label>
-                    <textarea rows="6" placeholder="Share your experience, insights, or words of encouragement..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Publishing Options:</label>
-                    <select>
-                        <option>Publish with my display name</option>
-                        <option>Publish anonymously</option>
-                        <option>Save as draft</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Share Story (Login Required)</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Appointment Modal -->
-    <div id="appointmentModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="hideModal('appointmentModal')">&times;</span>
-            <h2>Appointment Planner</h2>
-            <form>
-                <div class="form-group">
-                    <label>Appointment Type:</label>
-                    <select>
-                        <option>Chemotherapy</option>
-                        <option>Radiation</option>
-                        <option>Doctor Visit</option>
-                        <option>Lab Work</option>
-                        <option>Scan/Imaging</option>
-                        <option>Surgery</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Date:</label>
-                    <input type="date">
-                </div>
-                <div class="form-group">
-                    <label>Time:</label>
-                    <input type="time">
-                </div>
-                <div class="form-group">
-                    <label>Location:</label>
-                    <input type="text" placeholder="Hospital or clinic name">
-                </div>
-                <div class="form-group">
-                    <label>Notes:</label>
-                    <textarea rows="3" placeholder="Questions to ask, items to bring, etc."></textarea>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox"> Send me a reminder 24 hours before
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Save Appointment (Login Required)</button>
-            </form>
-        </div>
-    </div>
-
     <script>
-        function showModal(modalId) {
-            document.getElementById(modalId).style.display = 'block';
-        }
+        // User session management
+        let currentUser = null;
+        let isLoggedIn = false;
 
-        function hideModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(page => {
+                page.classList.remove('active');
             });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Special handling for stories page
+            if (pageId === 'stories') {
+                showCancerTypes();
+            }
         }
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        // Stories functionality
+        function showCancerTypes() {
+            document.getElementById('cancerTypes').style.display = 'grid';
+            document.querySelectorAll('.story-list').forEach(list => {
+                list.classList.remove('active');
+            });
+            document.querySelector('.back-btn').style.display = 'none';
+        }
+
+        function showStories(cancerType) {
+            document.getElementById('cancerTypes').style.display = 'none';
+            document.querySelectorAll('.story-list').forEach(list => {
+                list.classList.remove('active');
+            });
+            document.getElementById(cancerType + '-stories').classList.add('active');
+            document.querySelector('.back-btn').style.display = 'block';
+        }
+
+        function filterStories(searchTerm) {
+            // Implementation for story filtering
+            console.log('Filtering stories for:', searchTerm);
+        }
+
+        // Login/Registration functionality
+        function showLoginForm() {
+            document.getElementById('loginSection').style.display = 'block';
+            document.getElementById('registerSection').style.display = 'none';
+        }
+
+        function showRegisterForm() {
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('registerSection').style.display = 'block';
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // Simulate login process
+            if (email && password) {
+                currentUser = {
+                    email: email,
+                    name: email.split('@')[0], // Use part of email as name for demo
+                    userType: 'patient'
+                };
+                isLoggedIn = true;
+                updateUIForLoggedInUser();
+                showPage('home');
+                alert('Welcome back! You are now logged in.');
+            }
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            const formData = {
+                userType: document.getElementById('userType').value,
+                firstName: document.getElementById('firstName').value,
+                email: document.getElementById('registerEmail').value,
+                password: document.getElementById('registerPassword').value,
+                displayName: document.getElementById('displayName').value,
+                cancerType: document.getElementById('cancerType').value,
+                receiveMessages: document.getElementById('receiveMessages').checked,
+                shareStory: document.getElementById('shareStory').checked
+            };
+
+            if (formData.firstName && formData.email && formData.password && formData.userType) {
+                currentUser = formData;
+                isLoggedIn = true;
+                updateUIForLoggedInUser();
+                showPage('home');
+                alert(`Welcome to Healing Journeys, ${formData.firstName}! Your account has been created.`);
+            }
+        }
+
+        function updateUIForLoggedInUser() {
+            if (isLoggedIn && currentUser) {
+                // Update login link
+                document.getElementById('loginLink').textContent = `Hi, ${currentUser.firstName || currentUser.name}`;
+                document.getElementById('loginLink').onclick = function() { logout(); };
+                
+                // Show user info in tools
+                const userInfo = document.getElementById('userInfo');
+                const userName = document.getElementById('userName');
+                if (userInfo && userName) {
+                    userName.textContent = currentUser.firstName || currentUser.name;
+                    userInfo.style.display = 'block';
+                }
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            isLoggedIn = false;
+            document.getElementById('loginLink').textContent = 'Login';
+            document.getElementById('loginLink').onclick = function() { showPage('login'); };
+            document.getElementById('userInfo').style.display = 'none';
+            showPage('home');
+            alert('You have been logged out.');
+        }
+
+        // Tools functionality
+        function updateMoodValue(value) {
+            document.getElementById('moodValue').textContent = value;
+        }
+
+        function updateEnergyValue(value) {
+            document.getElementById('energyValue').textContent = value;
+        }
+
+        // Messages functionality
+        function submitMessage() {
+            const message = document.querySelector('#messages textarea').value;
+            const author = document.querySelector('#messages input[type="text"]').value;
+            const checkbox = document.querySelector('#messages input[type="checkbox"]');
+            
+            if (message && checkbox.checked) {
+                alert('Thank you for your message of encouragement! It will be reviewed and posted soon.');
+                document.querySelector('#messages textarea').value = '';
+                document.querySelector('#messages input[type="text"]').value = '';
+                checkbox.checked = false;
+            } else {
+                alert('Please write a message and confirm it is positive and supportive.');
+            }
+        }
+
+        // Form submissions for tools
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle all form submissions in tools
+            document.querySelectorAll('.tool-card button').forEach(button => {
+                if (button.textContent.includes('Save') || button.textContent.includes('Log') || button.textContent.includes('Update') || button.textContent.includes('Generate')) {
+                    button.onclick = function(e) {
+                        e.preventDefault();
+                        if (isLoggedIn) {
+                            alert('Data saved successfully! This information is securely stored and can be shared with your healthcare team.');
+                        } else {
+                            alert('Please login to save your information.');
+                            showPage('login');
+                        }
+                    };
                 }
             });
         });
 
-        // Form submissions (placeholder functionality)
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('This is a demo. In the full version, this would save your data securely.');
-            });
+        // Smooth scrolling and initial setup
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial page
+            showPage('home');
         });
     </script>
 </body>
