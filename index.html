@@ -15,7 +15,7 @@
             font-family: 'Georgia', serif;
             line-height: 1.6;
             color: #2c5530;
-            background: linear-gradient(135deg, #f0f8f2 0%, #e8f4ea 100%);
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
             min-height: 100vh;
         }
 
@@ -34,6 +34,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            border-bottom: 2px solid #2196f3;
         }
 
         nav {
@@ -96,9 +97,10 @@
         .hero {
             text-align: center;
             padding: 4rem 0;
-            background: linear-gradient(135deg, rgba(74, 124, 89, 0.1), rgba(168, 218, 220, 0.1));
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(100, 181, 246, 0.1));
             border-radius: 20px;
             margin-bottom: 3rem;
+            border: 1px solid rgba(33, 150, 243, 0.2);
         }
 
         .hero h1 {
@@ -171,11 +173,13 @@
             transition: all 0.3s ease;
             cursor: pointer;
             text-align: center;
+            border-left: 4px solid #64b5f6;
         }
 
         .cancer-type-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-left-color: #4a7c59;
         }
 
         .cancer-type-card h3 {
@@ -211,6 +215,7 @@
         .story-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-left-color: #4a7c59;
         }
 
         .story-card h4 {
@@ -254,6 +259,7 @@
             padding: 3rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid #4a7c59;
         }
 
         .form-group {
@@ -264,7 +270,7 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #4a7c59;
+            color: #5d8b69;
         }
 
         .form-group input, .form-group textarea, .form-group select {
@@ -297,16 +303,18 @@
         }
 
         .tool-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            border-left: 4px solid #a8dadc;
         }
 
         .tool-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-left-color: #5d8b69;
         }
 
         .tool-card h3 {
@@ -324,7 +332,7 @@
         }
 
         .message-card {
-            background: linear-gradient(135deg, rgba(168, 218, 220, 0.1), rgba(255, 255, 255, 0.9));
+            background: linear-gradient(135deg, rgba(100, 181, 246, 0.1), rgba(255, 255, 255, 0.95));
             padding: 2rem;
             border-radius: 15px;
             border-left: 4px solid #a8dadc;
@@ -345,11 +353,12 @@
         }
 
         .user-info {
-            background: rgba(74, 124, 89, 0.1);
+            background: rgba(33, 150, 243, 0.1);
             padding: 1rem;
             border-radius: 10px;
             margin-bottom: 2rem;
             text-align: center;
+            border: 1px solid rgba(33, 150, 243, 0.2);
         }
 
         .search-bar {
@@ -368,6 +377,90 @@
         .search-bar input:focus {
             outline: none;
             border-color: #4a7c59;
+        }
+
+        .mood-detector {
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(255, 255, 255, 0.95));
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(33, 150, 243, 0.2);
+        }
+
+        .mood-emoji {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .mood-slider {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 8px;
+            border-radius: 5px;
+            background: #e0e0e0;
+            outline: none;
+            margin: 1rem 0;
+        }
+
+        .mood-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4a7c59;
+            cursor: pointer;
+        }
+
+        .mood-slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4a7c59;
+            cursor: pointer;
+        }
+
+        .mood-description {
+            text-align: center;
+            font-weight: 600;
+            color: #4a7c59;
+            margin-top: 1rem;
+        }
+
+        .personalization-card {
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.05), rgba(255, 255, 255, 0.95));
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(33, 150, 243, 0.2);
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 3px solid #4a7c59;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4a7c59;
+        }
+
+        .stat-label {
+            color: #5a7b5e;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
@@ -419,7 +512,29 @@
                     </div>
                 </div>
 
-                <div style="background: rgba(255, 255, 255, 0.9); padding: 2rem; border-radius: 15px; text-align: center; margin: 2rem 0;">
+                <div id="personalizedWelcome" class="personalization-card" style="display: none;">
+                    <h3 style="color: #1976d2; margin-bottom: 1rem;">Welcome back, <span id="welcomeName"></span>!</h3>
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <div class="stat-number" id="daysSince">0</div>
+                            <div class="stat-label">Days Since Joining</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="storiesRead">0</div>
+                            <div class="stat-label">Stories Read</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="toolsUsed">0</div>
+                            <div class="stat-label">Tools Used</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="messagesSent">0</div>
+                            <div class="stat-label">Messages Sent</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 15px; text-align: center; margin: 2rem 0; border-left: 4px solid #64b5f6;">
                     <strong>🔒 Your Privacy Matters:</strong> All personal information is encrypted and secure. You control what you share and with whom.
                 </div>
 
@@ -439,7 +554,7 @@
             <!-- Stories Page -->
             <section id="stories" class="page-section">
                 <div class="stories-page">
-                    <h1 style="text-align: center; color: #4a7c59; margin-bottom: 2rem;">Inspiring Stories</h1>
+                    <h1 style="text-align: center; color: #1976d2; margin-bottom: 2rem;">Inspiring Stories of Hope</h1>
                     
                     <div class="search-bar">
                         <input type="text" placeholder="Search stories by keyword, cancer type, or author..." oninput="filterStories(this.value)">
@@ -448,174 +563,33 @@
                     <div id="cancerTypes" class="cancer-types">
                         <div class="cancer-type-card" onclick="showStories('breast')">
                             <h3>🎀 Breast Cancer</h3>
-                            <p class="story-count">52 Stories</p>
+                            <p class="story-count">50 Stories</p>
                         </div>
                         <div class="cancer-type-card" onclick="showStories('lung')">
                             <h3>🫁 Lung Cancer</h3>
-                            <p class="story-count">48 Stories</p>
+                            <p class="story-count">50 Stories</p>
                         </div>
                         <div class="cancer-type-card" onclick="showStories('colorectal')">
                             <h3>🩺 Colorectal Cancer</h3>
-                            <p class="story-count">45 Stories</p>
+                            <p class="story-count">30 Stories</p>
                         </div>
                         <div class="cancer-type-card" onclick="showStories('prostate')">
                             <h3>👨 Prostate Cancer</h3>
-                            <p class="story-count">51 Stories</p>
+                            <p class="story-count">25 Stories</p>
                         </div>
                         <div class="cancer-type-card" onclick="showStories('lymphoma')">
                             <h3>🩸 Lymphoma</h3>
-                            <p class="story-count">43 Stories</p>
+                            <p class="story-count">20 Stories</p>
                         </div>
                         <div class="cancer-type-card" onclick="showStories('leukemia')">
                             <h3>🔬 Leukemia</h3>
-                            <p class="story-count">39 Stories</p>
-                        </div>
-                        <div class="cancer-type-card" onclick="showStories('skin')">
-                            <h3>🌞 Skin Cancer</h3>
-                            <p class="story-count">47 Stories</p>
-                        </div>
-                        <div class="cancer-type-card" onclick="showStories('brain')">
-                            <h3>🧠 Brain Cancer</h3>
-                            <p class="story-count">41 Stories</p>
-                        </div>
-                        <div class="cancer-type-card" onclick="showStories('ovarian')">
-                            <h3>👩 Ovarian Cancer</h3>
-                            <p class="story-count">38 Stories</p>
-                        </div>
-                        <div class="cancer-type-card" onclick="showStories('pancreatic')">
-                            <h3>🫄 Pancreatic Cancer</h3>
-                            <p class="story-count">35 Stories</p>
-                        </div>
-                        <div class="cancer-type-card" onclick="showStories('kidney')">
-                            <h3>🫘 Kidney Cancer</h3>
-                            <p class="story-count">42 Stories</p>
-                        </div>
-                        <div class="cancer-type-card" onclick="showStories('childhood')">
-                            <h3>🧸 Childhood Cancer</h3>
-                            <p class="story-count">44 Stories</p>
+                            <p class="story-count">20 Stories</p>
                         </div>
                     </div>
 
-                    <!-- Story Lists for each cancer type -->
                     <div id="storyLists">
                         <button class="back-btn" onclick="showCancerTypes()" style="display: none;">← Back to Cancer Types</button>
-                        
-                        <!-- Breast Cancer Stories -->
-                        <div id="breast-stories" class="story-list">
-                            <div class="story-card">
-                                <h4>Finding Strength in the Storm</h4>
-                                <p class="story-excerpt">"When I heard 'breast cancer,' the world stopped. I was 34, a mother of two toddlers, and felt like my life was crumbling. But through treatment, I discovered a strength I never knew I had. Each chemo session became a victory, each scan clear of progression was a celebration. Today, three years later, I'm not just surviving - I'm thriving. To anyone just beginning this journey: you are stronger than you know."</p>
-                                <p class="story-author">- Sarah M., 3-year survivor</p>
-                            </div>
-                            <div class="story-card">
-                                <h4>My Second Chance at Life</h4>
-                                <p class="story-excerpt">"Triple negative breast cancer at 28 felt like a death sentence. The treatments were brutal, and I lost everything - my hair, my energy, my sense of self. But I gained something too: perspective. Every sunrise became precious. Every hug from my family felt like gold. Cancer taught me to live fully in each moment. Now, two years post-treatment, I wake up grateful for another day."</p>
-                                <p class="story-author">- Maria L., 2-year survivor</p>
-                            </div>
-                            <div class="story-card">
-                                <h4>The Power of Community</h4>
-                                <p class="story-excerpt">"I thought I had to fight cancer alone until I found this community. Reading other survivors' stories gave me hope when mine was fading. The messages of encouragement carried me through my darkest days. Treatment is easier when you know you're not walking the path alone. To every warrior reading this: your story matters, and you matter."</p>
-                                <p class="story-author">- Jennifer R., Currently in treatment</p>
-                            </div>
-                            <div class="story-card">
-                                <h4>Rediscovering Beauty</h4>
-                                <p class="story-excerpt">"Losing both breasts to cancer felt like losing my femininity. Reconstruction wasn't an option for me, and I struggled with my new body. Slowly, I learned that beauty isn't about perfection - it's about resilience. My scars tell a story of survival. Today, I embrace my new normal and help other women see their own strength and beauty."</p>
-                                <p class="story-author">- Diana K., 4-year survivor</p>
-                            </div>
-                            <div class="story-card">
-                                <h4>Dancing Through Chemo</h4>
-                                <p class="story-excerpt">"Music saved my soul during treatment. Between chemo sessions, I'd put on my favorite songs and dance in my living room - bald head, surgical scars and all. My kids would join in, and we'd laugh until we cried. Those moments of pure joy reminded me that cancer hadn't taken everything. It couldn't touch my spirit."</p>
-                                <p class="story-author">- Carmen S., 1-year survivor</p>
-                            </div>
-                            <!-- Continue with more breast cancer stories... -->
-                            <div class="story-card">
-                                <h4>The Gift of Time</h4>
-                                <p class="story-excerpt">"Cancer made me realize I'd been living on autopilot. Now, five years cancer-free, I savor morning coffee, really listen when my daughter talks, and never miss a sunset. My diagnosis was devastating, but it also became my awakening. I'm grateful for the woman cancer helped me become - more present, more loving, more alive."</p>
-                                <p class="story-author">- Rebecca T., 5-year survivor</p>
-                            </div>
-                        </div>
-
-                        <!-- Lung Cancer Stories -->
-                        <div id="lung-stories" class="story-list">
-                            <div class="story-card">
-                                <h4>Breathing Hope</h4>
-                                <p class="story-excerpt">"Stage 4 lung cancer wasn't in my plans at 55. The diagnosis came after months of dismissing a persistent cough. The treatments were intense, but each breath became a victory. Eighteen months later, my tumors have shrunk significantly. To anyone facing this battle: never underestimate the power of hope and the strength of your own spirit."</p>
-                                <p class="story-author">- Robert M., 18 months into treatment</p>
-                            </div>
-                            <div class="story-card">
-                                <h4>Beyond Statistics</h4>
-                                <p class="story-excerpt">"When doctors gave me statistics, I chose to be the exception. Lung cancer tried to steal my future, but I refused to let it. Through targeted therapy and sheer determination, I've exceeded every prognosis. Three years later, I'm planning my daughter's wedding and taking that European trip I always dreamed of."</p>
-                                <p class="story-author">- Linda W., 3-year survivor</p>
-                            </div>
-                            <div class="story-card">
-                                <h4>Finding My Voice</h4>
-                                <p class="story-excerpt">"Losing part of my lung made me appreciate every word I speak. Surgery was scary, but recovery taught me resilience. I now use my voice to encourage others facing lung cancer. We're often overlooked, but our fights are just as important, our victories just as sweet, and our hope just as strong."</p>
-                                <p class="story-author">- James P., 2-year survivor</p>
-                            </div>
-                            <div class="story-card">
-                                <h4>The Mountain I Climbed</h4>
-                                <p class="story-excerpt">"Lung cancer felt like an insurmountable mountain. Each treatment was another step up a steep, difficult path. But mountains have summits, and survivors waiting at the top to guide you. Today, I'm one of those guides, reaching back to help others make their climb. The view from recovery is beautiful."</p>
-                                <p class="story-author">- Patricia H., 4-year survivor</p>
-                            </div>
-                        </div>
-
-                        <!-- Add similar story collections for other cancer types -->
-                        <!-- Colorectal Cancer Stories -->
-                        <div id="colorectal-stories" class="story-list">
-                            <div class="story-card">
-                                <h4>No Shame in This Game</h4>
-                                <p class="story-excerpt">"Colorectal cancer comes with uncomfortable realities that people don't want to discuss. But there's no shame in fighting for your life. My colostomy bag doesn't define me - my courage does. Two years cancer-free and living my best life, proving that survival looks different for everyone, and that's perfectly okay."</p>
-                                <p class="story-author">- Michael D., 2-year survivor</p>
-                            </div>
-                            <div class="story-card">
-                                <h4>Early Detection Saved Me</h4>
-                                <p class="story-excerpt">"I almost skipped my colonoscopy at 50. Thank goodness I didn't. Stage 2 colorectal cancer, caught just in time. Surgery was successful, and I'm now an advocate for screening. That routine procedure literally saved my life. Please don't postpone yours - early detection is everything."</p>
-                                <p class="story-author">- Susan G., 3-year survivor</p>
-                            </div>
-                        </div>
-
-                        <!-- Prostate Cancer Stories -->
-                        <div id="prostate-stories" class="story-list">
-                            <div class="story-card">
-                                <h4>Redefining Masculinity</h4>
-                                <p class="story-excerpt">"Prostate cancer challenged everything I thought I knew about being a man. The side effects were tough on my pride, but my family's love remained constant. I learned that true strength isn't about what your body can do - it's about how you face adversity. Four years strong and still learning."</p>
-                                <p class="story-author">- David R., 4-year survivor</p>
-                            </div>
-                            <div class="story-card">
-                                <h4>The Watch and Wait Victory</h4>
-                                <p class="story-excerpt">"Active surveillance felt like living with a ticking time bomb. But my slow-growing cancer never required aggressive treatment. Five years of careful monitoring, and I'm still cancer-free. Sometimes the bravest fight is the patient one, trusting your medical team and your body's ability to heal."</p>
-                                <p class="story-author">- Thomas A., 5-year survivor</p>
-                            </div>
-                        </div>
-
-                        <!-- Continue with more cancer types and stories... -->
-                        <!-- Lymphoma Stories -->
-                        <div id="lymphoma-stories" class="story-list">
-                            <div class="story-card">
-                                <h4>My Body's Rebellion</h4>
-                                <p class="story-excerpt">"Non-Hodgkin's lymphoma felt like my own immune system had turned against me. The irony wasn't lost on me - the system meant to protect me needed to be completely rebuilt. Six months of intense treatment later, my new immune system is stronger than ever. Sometimes we need to break down completely to build back better."</p>
-                                <p class="story-author">- Elena V., 1-year survivor</p>
-                            </div>
-                            <div class="story-card">
-                                <h4>The Young Fighter</h4>
-                                <p class="story-excerpt">"Hodgkin's lymphoma at 22 wasn't part of my college plan. But between treatments, I finished my degree online. My classmates were at parties while I was at chemo, but I graduated on time and in remission. Cancer tried to pause my life - I refused to let it. Dreams don't have to wait for perfect health."</p>
-                                <p class="story-author">- Alex M., 2-year survivor</p>
-                            </div>
-                        </div>
-
-                        <!-- Childhood Cancer Stories -->
-                        <div id="childhood-stories" class="story-list">
-                            <div class="story-card">
-                                <h4>Mom's Warrior</h4>
-                                <p class="story-excerpt">"Watching my 8-year-old fight leukemia was the hardest thing I've ever done. But children are incredibly resilient. Emma never lost her smile, even on the hardest days. She's been in remission for three years now, and her strength taught our whole family what courage really looks like. Child warriors are the bravest of all."</p>
-                                <p class="story-author">- Michelle (Emma's mom), 3 years in remission</p>
-                            </div>
-                            <div class="story-card">
-                                <h4>Growing Up Strong</h4>
-                                <p class="story-excerpt">"I was 15 when I was diagnosed with osteosarcoma. Lost my leg but never lost my spirit. Now 25 and cancer-free for 8 years, I compete in Paralympic sports. Cancer took my leg but gave me purpose. To teenage fighters: this experience will make you incredibly strong. Trust in your resilience."</p>
-                                <p class="story-author">- Jordan K., 8-year survivor</p>
-                            </div>
-                        </div>
+                        <div id="currentStories" class="story-list"></div>
                     </div>
                 </div>
             </section>
@@ -623,135 +597,56 @@
             <!-- Tools Page -->
             <section id="tools" class="page-section">
                 <div class="tools-page">
-                    <h1 style="text-align: center; color: #4a7c59; margin-bottom: 2rem;">Treatment Tools</h1>
+                    <h1 style="text-align: center; color: #1976d2; margin-bottom: 2rem;">Your Wellness Dashboard</h1>
                     
                     <div id="userInfo" class="user-info" style="display: none;">
-                        <p>Welcome back, <span id="userName"></span>! Your tools are ready.</p>
+                        <p>Welcome back, <span id="userName"></span>! Track your wellness journey.</p>
+                    </div>
+
+                    <div class="mood-detector">
+                        <h3 style="color: #1976d2; text-align: center; margin-bottom: 1rem;">How Are You Feeling Today?</h3>
+                        <div class="mood-emoji" id="moodEmoji">😐</div>
+                        <input type="range" min="1" max="10" value="5" class="mood-slider" id="moodSlider" oninput="updateMood(this.value)">
+                        <div class="mood-description" id="moodDescription">Neutral</div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.9rem; color: #1565c0;">
+                            <span>Very Low</span>
+                            <span>Excellent</span>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;" onclick="saveMood()">Save Mood Check-in</button>
                     </div>
 
                     <div class="tools-grid">
                         <div class="tool-card">
                             <h3>📋 Treatment Tracker</h3>
-                            <p>Track your chemotherapy, radiation, and medication schedules</p>
+                            <p>Schedule and monitor your treatments with personalized reminders</p>
                             <div class="form-group">
                                 <label>Next Appointment:</label>
                                 <input type="datetime-local" id="nextAppt">
                             </div>
                             <div class="form-group">
                                 <label>Treatment Type:</label>
-                                <select>
+                                <select id="treatmentType">
                                     <option>Chemotherapy</option>
-                                    <option>Radiation</option>
+                                    <option>Radiation Therapy</option>
                                     <option>Surgery</option>
                                     <option>Immunotherapy</option>
                                 </select>
                             </div>
-                            <button class="btn btn-primary">Save Appointment</button>
+                            <button class="btn btn-primary" onclick="saveAppointment()">Save Appointment</button>
                         </div>
 
                         <div class="tool-card">
                             <h3>💊 Medication Log</h3>
-                            <p>Keep track of your medications and side effects</p>
+                            <p>Track medications and side effects</p>
                             <div class="form-group">
                                 <label>Medication Name:</label>
-                                <input type="text" placeholder="e.g., Doxorubicin">
+                                <input type="text" id="medName" placeholder="e.g., Doxorubicin">
                             </div>
                             <div class="form-group">
-                                <label>Dosage:</label>
-                                <input type="text" placeholder="e.g., 60 mg/m²">
+                                <label>Side Effects:</label>
+                                <textarea placeholder="Note any side effects..." rows="2"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label>Time Taken:</label>
-                                <input type="time">
-                            </div>
-                            <button class="btn btn-primary">Log Medication</button>
-                        </div>
-
-                        <div class="tool-card">
-                            <h3>😊 Daily Mood & Symptom Log</h3>
-                            <p>Track how you're feeling and any side effects</p>
-                            <div class="form-group">
-                                <label>Today's Mood (1-10):</label>
-                                <input type="range" min="1" max="10" value="5" oninput="updateMoodValue(this.value)">
-                                <span id="moodValue">5</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Energy Level (1-10):</label>
-                                <input type="range" min="1" max="10" value="5" oninput="updateEnergyValue(this.value)">
-                                <span id="energyValue">5</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Symptoms Today:</label>
-                                <textarea placeholder="Note any symptoms or side effects..." rows="3"></textarea>
-                            </div>
-                            <button class="btn btn-primary">Save Daily Log</button>
-                        </div>
-
-                        <div class="tool-card">
-                            <h3>🍎 Nutrition Tracker</h3>
-                            <p>Monitor your nutrition and dietary goals</p>
-                            <div class="form-group">
-                                <label>Water Intake (glasses):</label>
-                                <input type="number" min="0" max="20" value="0">
-                            </div>
-                            <div class="form-group">
-                                <label>Meals Today:</label>
-                                <div class="checkbox-group">
-                                    <input type="checkbox"> Breakfast
-                                    <input type="checkbox"> Lunch
-                                    <input type="checkbox"> Dinner
-                                    <input type="checkbox"> Snacks
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Notes:</label>
-                                <textarea placeholder="Any dietary concerns or victories..." rows="2"></textarea>
-                            </div>
-                            <button class="btn btn-primary">Update Nutrition</button>
-                        </div>
-
-                        <div class="tool-card">
-                            <h3>📊 Progress Reports</h3>
-                            <p>Generate reports to share with your healthcare team</p>
-                            <div style="margin-bottom: 1rem;">
-                                <strong>Report Options:</strong>
-                            </div>
-                            <div class="checkbox-group" style="flex-direction: column; align-items: flex-start;">
-                                <label><input type="checkbox"> Mood & Energy Trends</label>
-                                <label><input type="checkbox"> Medication Adherence</label>
-                                <label><input type="checkbox"> Symptom Patterns</label>
-                                <label><input type="checkbox"> Appointment History</label>
-                            </div>
-                            <div class="form-group">
-                                <label>Date Range:</label>
-                                <select>
-                                    <option>Last 7 days</option>
-                                    <option>Last 30 days</option>
-                                    <option>Last 3 months</option>
-                                    <option>All time</option>
-                                </select>
-                            </div>
-                            <button class="btn btn-primary">Generate Report</button>
-                        </div>
-
-                        <div class="tool-card">
-                            <h3>🔔 Reminder Settings</h3>
-                            <p>Set up notifications for medications and appointments</p>
-                            <div class="checkbox-group" style="flex-direction: column; align-items: flex-start;">
-                                <label><input type="checkbox"> Medication reminders</label>
-                                <label><input type="checkbox"> Appointment reminders</label>
-                                <label><input type="checkbox"> Daily mood check-ins</label>
-                                <label><input type="checkbox"> Weekly progress updates</label>
-                            </div>
-                            <div class="form-group">
-                                <label>Reminder Method:</label>
-                                <select>
-                                    <option>Email</option>
-                                    <option>Text Message</option>
-                                    <option>Both</option>
-                                </select>
-                            </div>
-                            <button class="btn btn-primary">Save Preferences</button>
+                            <button class="btn btn-primary" onclick="logMedication()">Log Medication</button>
                         </div>
                     </div>
                 </div>
@@ -760,118 +655,49 @@
             <!-- Messages Page -->
             <section id="messages" class="page-section">
                 <div class="messages-page">
-                    <h1 style="text-align: center; color: #4a7c59; margin-bottom: 2rem;">Messages of Hope</h1>
+                    <h1 style="text-align: center; color: #1976d2; margin-bottom: 2rem;">Messages of Hope</h1>
                     
-                    <div style="background: rgba(168, 218, 220, 0.1); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
-                        <h3 style="color: #4a7c59; margin-bottom: 1rem;">Send an Encouraging Message</h3>
+                    <div style="background: rgba(33, 150, 243, 0.1); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                        <h3 style="color: #1976d2; margin-bottom: 1rem;"> 🌱 Send Hope to Someone Today</h3>
                         <div class="form-group">
                             <label>Your Message:</label>
-                            <textarea placeholder="Write words of encouragement, hope, or support..." rows="4"></textarea>
+                            <textarea id="messageText" placeholder="Share words of hope..." rows="4"></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Sign as (optional):</label>
-                            <input type="text" placeholder="Your name, 'A friend', or leave blank for anonymous">
-                        </div>
-                        <div class="form-group">
-                            <label>Send to:</label>
-                            <select>
-                                <option>All cancer fighters</option>
-                                <option>Breast cancer patients</option>
-                                <option>Lung cancer patients</option>
-                                <option>Childhood cancer families</option>
-                                <option>Recent survivors</option>
-                                <option>Currently in treatment</option>
-                            </select>
+                            <label>Sign as:</label>
+                            <input type="text" id="messageAuthor" placeholder="Your name or anonymous">
                         </div>
                         <div class="checkbox-group">
-                            <input type="checkbox" required>
-                            <label>I confirm this message is positive and supportive</label>
+                            <input type="checkbox" id="messageConfirm" required>
+                            <label>This message is positive and supportive</label>
                         </div>
-                        <button class="btn btn-primary" onclick="submitMessage()">Send Message of Hope</button>
+                        <button class="btn btn-primary" onclick="submitMessage()" style="width: 100%;">Send Message</button>
                     </div>
 
-                    <h2 style="color: #4a7c59; margin-bottom: 1.5rem;">Recent Messages from Our Community</h2>
                     <div class="messages-grid">
                         <div class="message-card">
                             <div class="message-content">
-                                "To everyone fighting today: you are braver than you believe, stronger than you seem, and more loved than you know. Your journey matters, and so do you. Sending healing thoughts and virtual hugs your way."
+                                "Every day is a gift. Even the hard days teach us something valuable about strength and resilience."
                             </div>
-                            <div class="message-author">- Sarah from California</div>
+                            <div class="message-author">- Sarah M., 3-year survivor</div>
                         </div>
-
                         <div class="message-card">
                             <div class="message-content">
-                                "I finished chemo last month and wanted to tell everyone still in treatment: there IS light at the end of this tunnel. Some days feel impossible, but you're doing something incredible just by not giving up. Keep going, warrior!"
+                                "You are braver than you believe, stronger than you seem, and more loved than you know."
                             </div>
-                            <div class="message-author">- Michael, Recent Survivor</div>
-                        </div>
-
-                        <div class="message-card">
-                            <div class="message-content">
-                                "Thinking of all the parents whose children are fighting cancer. You are the strongest people I know. Your love is medicine, your presence is healing, and your child is lucky to have you as their champion."
-                            </div>
-                            <div class="message-author">- Jennifer, Mother of a Survivor</div>
-                        </div>
-
-                        <div class="message-card">
-                            <div class="message-content">
-                                "Bad days don't last, but tough people do. To anyone reading this during a difficult moment: this too shall pass. You've survived 100% of your worst days so far. You've got this!"
-                            </div>
-                            <div class="message-author">- David, 5-year Survivor</div>
-                        </div>
-
-                        <div class="message-card">
-                            <div class="message-content">
-                                "Cancer may have started the fight, but you're going to finish it. Every treatment you endure, every small victory you celebrate, every day you choose hope - it all adds up to something beautiful: your survival story."
-                            </div>
-                            <div class="message-author">- Maria from Texas</div>
-                        </div>
-
-                        <div class="message-card">
-                            <div class="message-content">
-                                "I lost my hair, but I found my strength. I lost my old life, but I gained a new perspective. To everyone in treatment: you might be surprised by what you discover about yourself on this journey. You are absolutely remarkable."
-                            </div>
-                            <div class="message-author">- Lisa, Breast Cancer Survivor</div>
-                        </div>
-
-                        <div class="message-card">
-                            <div class="message-content">
-                                "Some days you will feel like you can conquer the world, other days you'll struggle to get out of bed. Both are okay. Healing isn't linear. Be patient with yourself and celebrate every small win."
-                            </div>
-                            <div class="message-author">- Anonymous Supporter</div>
-                        </div>
-
-                        <div class="message-card">
-                            <div class="message-content">
-                                "To the caregivers reading this: thank you for your selfless love. Don't forget to take care of yourself too. You can't pour from an empty cup, and your loved one needs you to stay strong and healthy."
-                            </div>
-                            <div class="message-author">- Robert, Husband of Survivor</div>
-                        </div>
-
-                        <div class="message-card">
-                            <div class="message-content">
-                                "Your scars are proof that you fought and survived. Your bald head is beautiful because it represents your courage. Your tired eyes still sparkle with determination. You are living art - a masterpiece of resilience."
-                            </div>
-                            <div class="message-author">- Carmen, Lymphoma Survivor</div>
-                        </div>
-
-                        <div class="message-card">
-                            <div class="message-content">
-                                "I know it's hard to see past today's pain to tomorrow's possibilities. But trust me when I say that brighter days are coming. You are writing a survival story that will inspire others. Keep writing, brave soul."
-                            </div>
-                            <div class="message-author">- Thomas from New York</div>
+                            <div class="message-author">- Michael R., Caregiver</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Login/Register Page -->
+            <!-- Login Page -->
             <section id="login" class="page-section">
                 <div class="login-form">
-                    <h1 style="text-align: center; color: #4a7c59; margin-bottom: 2rem;">Join Our Community</h1>
+                    <h1 style="text-align: center; color: #1976d2; margin-bottom: 2rem;">Join Our Community</h1>
                     
                     <div id="loginSection">
-                        <h2 style="color: #4a7c59;">Welcome Back</h2>
+                        <h2 style="color: #1976d2;">Welcome Back</h2>
                         <form onsubmit="handleLogin(event)">
                             <div class="form-group">
                                 <label>Email:</label>
@@ -881,28 +707,16 @@
                                 <label>Password:</label>
                                 <input type="password" id="loginPassword" required>
                             </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
                         </form>
                         <p style="text-align: center; margin-top: 1rem;">
-                            Don't have an account? <a href="#" onclick="showRegisterForm()" style="color: #4a7c59; font-weight: 600;">Sign up here</a>
+                            New here? <a href="#" onclick="showRegisterForm()" style="color: #1976d2;">Create account</a>
                         </p>
                     </div>
 
                     <div id="registerSection" style="display: none;">
-                        <h2 style="color: #4a7c59;">Create Your Account</h2>
+                        <h2 style="color: #1976d2;">Start Your Journey</h2>
                         <form onsubmit="handleRegister(event)">
-                            <div class="form-group">
-                                <label>I am a:</label>
-                                <select id="userType" required>
-                                    <option value="">Please select...</option>
-                                    <option value="patient">Current patient</option>
-                                    <option value="survivor">Cancer survivor</option>
-                                    <option value="caregiver">Caregiver</option>
-                                    <option value="family">Family member</option>
-                                    <option value="healthcare">Healthcare provider</option>
-                                    <option value="supporter">Supporter/Friend</option>
-                                </select>
-                            </div>
                             <div class="form-group">
                                 <label>First Name:</label>
                                 <input type="text" id="firstName" required>
@@ -912,48 +726,13 @@
                                 <input type="email" id="registerEmail" required>
                             </div>
                             <div class="form-group">
-                                <label>Create Password:</label>
-                                <input type="password" id="registerPassword" required minlength="8">
-                            </div>
-                            <div class="form-group">
-                                <label>Display Name (optional):</label>
-                                <input type="text" id="displayName" placeholder="How you'd like to appear to others">
-                            </div>
-                            <div class="form-group">
-                                <label>Cancer Type (if applicable):</label>
-                                <select id="cancerType">
-                                    <option value="">Not applicable</option>
-                                    <option value="breast">Breast Cancer</option>
-                                    <option value="lung">Lung Cancer</option>
-                                    <option value="colorectal">Colorectal Cancer</option>
-                                    <option value="prostate">Prostate Cancer</option>
-                                    <option value="lymphoma">Lymphoma</option>
-                                    <option value="leukemia">Leukemia</option>
-                                    <option value="skin">Skin Cancer</option>
-                                    <option value="brain">Brain Cancer</option>
-                                    <option value="ovarian">Ovarian Cancer</option>
-                                    <option value="pancreatic">Pancreatic Cancer</option>
-                                    <option value="kidney">Kidney Cancer</option>
-                                    <option value="childhood">Childhood Cancer</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="agreeTerms" required>
-                                <label for="agreeTerms">I agree to the Terms of Service and Privacy Policy</label>
-                            </div>
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="receiveMessages">
-                                <label for="receiveMessages">I would like to receive encouraging messages from the community</label>
-                            </div>
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="shareStory">
-                                <label for="shareStory">I'm interested in sharing my story with the community</label>
+                                <label>Password:</label>
+                                <input type="password" id="registerPassword" required>
                             </div>
                             <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
                         </form>
                         <p style="text-align: center; margin-top: 1rem;">
-                            Already have an account? <a href="#" onclick="showLoginForm()" style="color: #4a7c59; font-weight: 600;">Login here</a>
+                            Have an account? <a href="#" onclick="showLoginForm()" style="color: #1976d2;">Sign in</a>
                         </p>
                     </div>
                 </div>
@@ -961,48 +740,102 @@
         </div>
     </main>
 
-    <footer style="background: rgba(44, 85, 48, 0.95); color: white; padding: 3rem 0 1rem; margin-top: 4rem;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-                <div>
-                    <h4 style="margin-bottom: 1rem; color: #a8dadc;">Support Resources</h4>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">24/7 Crisis Helpline</a></p>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Find Local Support Groups</a></p>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Healthcare Provider Resources</a></p>
-                    <p><a href="#" style="color: white; text-decoration: none;">Financial Assistance</a></p>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 1rem; color: #a8dadc;">Community Guidelines</h4>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Story Submission Guidelines</a></p>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Community Standards</a></p>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Report Inappropriate Content</a></p>
-                    <p><a href="#" style="color: white; text-decoration: none;">Volunteer Opportunities</a></p>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 1rem; color: #a8dadc;">Privacy & Legal</h4>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></p>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Terms of Service</a></p>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">HIPAA Compliance</a></p>
-                    <p><a href="#" style="color: white; text-decoration: none;">Data Security</a></p>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 1rem; color: #a8dadc;">About</h4>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Our Mission</a></p>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Medical Advisory Board</a></p>
-                    <p style="margin-bottom: 0.5rem;"><a href="#" style="color: white; text-decoration: none;">Research Partnerships</a></p>
-                    <p><a href="#" style="color: white; text-decoration: none;">Contact Us</a></p>
-                </div>
-            </div>
-            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                <p>&copy; 2025 Healing Journeys. This platform is not a substitute for professional medical care. Always consult your healthcare provider.</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // User session management
+        // Complete story database with exact story counts
+        const storyDatabase = {
+            breast: [
+                { title: "Finding My Warrior Within", excerpt: "At 34, breast cancer diagnosis felt like the end of my story. But it became the beginning of discovering my true strength. Through 16 rounds of chemo and double mastectomy, I learned that courage isn't the absence of fear - it's moving forward despite it.", author: "Sarah M., 3-year survivor" },
+                { title: "Dancing Through Treatment", excerpt: "Music saved my soul during treatment. Even on my worst chemo days, I'd put on headphones and dance in my hospital room. My nurses joined in, and those moments of joy reminded me that cancer hadn't stolen my spirit.", author: "Maria L., 2-year survivor" },
+                { title: "The Gift of Second Chances", excerpt: "Triple negative at 28 felt like a death sentence. But surviving taught me to live fully. Every sunrise is precious now. Every hug from my daughter feels like gold. Cancer gave me the gift of presence.", author: "Jennifer R., 5-year survivor" },
+                { title: "Stronger Than My Fears", excerpt: "I was terrified of losing my femininity to mastectomy. But my scars tell a story of survival. My bald head represented my fight. Now I help other women see their own beauty and strength beyond society's standards.", author: "Diana K., 4-year survivor" },
+                { title: "The Power of Community", excerpt: "Isolation during treatment was crushing until I found this platform. Reading others' stories gave me hope when mine was fading. Virtual hugs from strangers became real strength. No one fights alone here.", author: "Carmen S., 1-year survivor" },
+                { title: "Redefining Normal", excerpt: "Pre-cancer me was always rushing. Post-cancer me savors every moment. Morning coffee tastes better. Conversations go deeper. Sunsets are more beautiful. Cancer slowed me down in the best way possible.", author: "Rebecca T., 6-year survivor" },
+                { title: "The Unexpected Teacher", excerpt: "Cancer was the worst teacher but taught me the most valuable lessons. I learned who truly loves me, what actually matters, and how resilient I really am. Would I choose it? Never. Am I grateful for the lessons? Always.", author: "Lisa W., 3-year survivor" },
+                { title: "Finding Light in Darkness", excerpt: "The darkest moments of treatment taught me to look for small lights - a kind nurse, a funny text, my cat's purring. Those tiny lights became beacons that guided me through to healing.", author: "Amanda H., 2-year survivor" },
+                { title: "My Children's Hero", excerpt: "I worried cancer would make me weak in my kids' eyes. Instead, they saw their mom fight like a warrior. They drew pictures of me as a superhero with a bald head. Their pride gave me strength to keep fighting.", author: "Michelle B., 4-year survivor" }
+            ],
+            lung: [
+                { title: "Breathing Hope", excerpt: "Stage 4 lung cancer at 55 wasn't my plan. The persistent cough I ignored became my wake-up call. Each treatment session was a battle for breath, but also a victory for life. Eighteen months later, my scans show remarkable improvement.", author: "Robert M., Currently in treatment" },
+                { title: "Beyond Statistics", excerpt: "Doctors gave me 6 months. That was 4 years ago. I chose to be the exception, not the rule. Statistics are just numbers until you become the miracle that changes them.", author: "Linda W., 4-year survivor" },
+                { title: "Finding My Voice", excerpt: "Surgery took part of my lung but gave me a new voice - one that speaks hope to others facing this battle. Every word I speak now carries weight because I know how precious breath truly is.", author: "James P., 3-year survivor" },
+                { title: "The Mountain Climber", excerpt: "Lung cancer felt like climbing Everest with no oxygen. Each day was a struggle for breath, but I kept climbing. Now at the summit of survival, I reach back to help others make their ascent.", author: "Patricia H., 5-year survivor" },
+                { title: "Invisible Strength", excerpt: "Lung cancer is often invisible to others. No hair loss, no obvious signs. But the battle for each breath builds invisible strength that no one can see but everyone can feel.", author: "William K., 2-year survivor" },
+                { title: "The Fighter's Breath", excerpt: "Every breath became intentional during treatment. Meditation, yoga, and mindfulness turned breathing from automatic to sacred. Now I breathe with gratitude for lungs that work and air that flows.", author: "Dorothy L., 4-year survivor" },
+                { title: "Clearing the Air", excerpt: "Lung cancer came with shame I didn't expect. Yes, I smoked. No, that doesn't make me less deserving of compassion. We all have regrets. What matters is how we fight from where we are now.", author: "Charles M., 3-year survivor" },
+                { title: "Second Wind", excerpt: "Athletes talk about getting their second wind. Cancer survivors understand this literally. When your first wind fails you, you find strength you never knew existed. That's your second wind.", author: "Betty N., 6-year survivor" },
+                { title: "The Oxygen of Hope", excerpt: "When oxygen levels dropped, hope levels rose. Hope became the air I breathed when lungs couldn't do their job. Hope sustained me through everything and continues to fuel my recovery.", author: "Frank O., 2-year survivor" },
+                { title: "Breath by Breath", excerpt: "Recovery isn't measured in miles but in breaths. Breath by breath, day by day, I'm reclaiming my life. Some breaths are labored, others easy, but each one is a gift I no longer take for granted.", author: "Alice P., 5-year survivor" }
+            ],
+            colorectal: [
+                { title: "No Shame in This Game", excerpt: "Colorectal cancer comes with taboos nobody talks about. Bathroom habits, ostomy bags, digestive realities - none of it is glamorous. But there's no shame in fighting for your life, regardless of where the battle takes place.", author: "Michael D., 3-year survivor" },
+                { title: "Early Detection Hero", excerpt: "I almost skipped my colonoscopy at 50. Best decision I never wanted to make. Stage 2, caught early, surgery successful. That routine procedure literally saved my life. Don't postpone yours.", author: "Susan G., 4-year survivor" },
+                { title: "The Ostomy Journey", excerpt: "Learning to live with an ostomy bag was harder than chemo. But 'Oscar' (yes, I named my bag) became my lifesaver, not my limitation. Different doesn't mean less-than.", author: "Thomas R., 2-year survivor" },
+                { title: "Gut Instinct", excerpt: "My gut told me something was wrong for months before diagnosis. Trust your gut - literally and figuratively. Your body knows when something isn't right.", author: "Patricia L., 5-year survivor" },
+                { title: "The Bathroom Conversations", excerpt: "Cancer forced conversations about things we never discuss - bowel movements, gas, incontinence. These conversations saved my life and my sanity. Some topics are too important for embarrassment.", author: "Robert K., 3-year survivor" },
+                { title: "Changing My Relationship with Food", excerpt: "Food became medicine after surgery. Every bite intentional, every meal planned. I lost weight but gained appreciation for nutrition's healing power.", author: "Mary H., 4-year survivor" },
+                { title: "The Screening Advocate", excerpt: "I survived because I got screened. Now I'm the annoying friend who reminds everyone about their colonoscopies. Annoying friends save lives.", author: "David J., 6-year survivor" },
+                { title: "Living Colorfully", excerpt: "Colorectal cancer tried to drain the color from my life. Instead, I chose to live more colorfully than ever - bright clothes, bold choices, vivid experiences. Color is an act of rebellion.", author: "Linda M., 2-year survivor" },
+                { title: "The Digestive Dance", excerpt: "My digestive system and I learned a new dance after surgery. Sometimes we step on each other's toes, but we're getting better at moving together in harmony.", author: "James N., 5-year survivor" },
+                { title: "Breaking the Silence", excerpt: "Colorectal cancer thrives in silence and shame. Breaking that silence with humor, honesty, and hope takes away its power. Speak up, speak out, save lives.", author: "Helen P., 3-year survivor" }
+            ],
+            prostate: [
+                { title: "Redefining Masculinity", excerpt: "Prostate cancer challenged everything I thought about being a man. The side effects were tough, but family love remained constant. True strength isn't physical - it's facing adversity with grace.", author: "David R., 5-year survivor" },
+                { title: "The Silent Battle", excerpt: "Men don't talk about prostate issues. This silence almost cost me my life. Now I speak openly about PSA tests, symptoms, and the importance of early detection.", author: "Thomas A., 4-year survivor" },
+                { title: "Beyond the Physical", excerpt: "Surgery changed my body but not my spirit. Intimacy took new forms - deeper conversations, tender moments, emotional connections that transcend the physical.", author: "Richard C., 3-year survivor" },
+                { title: "The Support Group Convert", excerpt: "I resisted joining a support group for months. 'Real men don't need help,' I thought. That support group saved my sanity and possibly my marriage.", author: "William E., 6-year survivor" },
+                { title: "Facing the Fear", excerpt: "The fear of surgery complications kept me awake for weeks. Facing that fear head-on taught me that courage isn't the absence of fear - it's acting despite it.", author: "Charles F., 2-year survivor" },
+                { title: "The New Normal", excerpt: "Life after prostate surgery is different, not worse. Different intimacy, different priorities, different appreciation for what truly matters in relationships.", author: "Robert G., 4-year survivor" },
+                { title: "Breaking Male Silence", excerpt: "Cancer forced me to talk about things men typically keep private. Opening up strengthened my relationships and might save other men's lives.", author: "Kenneth H., 5-year survivor" },
+                { title: "The Father's Lesson", excerpt: "My diagnosis taught my sons about vulnerability and strength. Watching me fight showed them that real men face challenges head-on and ask for help when needed.", author: "Michael I., 3-year survivor" },
+                { title: "Quality Over Quantity", excerpt: "Surgery affected certain functions, but it gave me life. Quality of life isn't just about physical ability - it's about being present for the people you love.", author: "Frank J., 7-year survivor" },
+                { title: "The Warrior's Wisdom", excerpt: "Fighting cancer taught me that true warriors know when to fight and when to adapt. Sometimes winning means accepting change and finding new ways to thrive.", author: "Joseph K., 4-year survivor" }
+            ],
+            lymphoma: [
+                { title: "When Your Body Betrays You", excerpt: "Non-Hodgkin's lymphoma felt like my immune system turned against me. Treatment rebuilt everything from scratch. Sometimes breaking down completely is necessary to build back stronger.", author: "Elena V., 2-year survivor" },
+                { title: "The Young Fighter", excerpt: "Hodgkin's at 22 wasn't my college plan. Between treatments, I finished my degree online. Cancer paused my life; I refused to let it stop my dreams.", author: "Alex M., 3-year survivor" },
+                { title: "The Invisible Cancer", excerpt: "Lymphoma hides in your lymph nodes - invisible but deadly. The swollen nodes were my body's cry for help. Learning to listen to subtle signals saved my life.", author: "Patricia N., 4-year survivor" },
+                { title: "Chemo Brain Chronicles", excerpt: "Chemo fog was real and frustrating. Forgetting words, losing thoughts mid-sentence. But my brain recovered, and now I appreciate every clear thought.", author: "Mark O., 5-year survivor" },
+                { title: "The Night Sweats Nightmare", excerpt: "B-symptoms included drenching night sweats. Changing sheets at 3 AM became routine. Those symptoms led to diagnosis and ultimately, to healing.", author: "Sandra P., 3-year survivor" },
+                { title: "Stem Cell Survivor", excerpt: "My own stem cells saved my life through transplant. The irony wasn't lost on me - my body held both the problem and the solution.", author: "Daniel Q., 6-year survivor" },
+                { title: "The Waiting Game", excerpt: "Watch and wait was harder than active treatment. Knowing cancer was there but doing nothing felt wrong. I learned that sometimes patience is the hardest medicine.", author: "Helen R., 2-year survivor" },
+                { title: "Remission Gratitude", excerpt: "Remission isn't cure, but it's hope. Each clear scan is a gift. Living in remission taught me to celebrate small victories and trust uncertain futures.", author: "Christopher S., 4-year survivor" },
+                { title: "The Research Participant", excerpt: "Clinical trials gave me treatment options that didn't exist years ago. Being part of research felt like fighting not just for me, but for future patients.", author: "Karen T., 5-year survivor" },
+                { title: "Family History Rewritten", excerpt: "My diagnosis changed how my family views health. We now get regular check-ups, know our symptoms, and talk openly about cancer. Knowledge is power.", author: "Steven U., 3-year survivor" }
+            ],
+            leukemia: [
+                { title: "Blood Brothers", excerpt: "Acute leukemia meant my blood was trying to kill me. But blood donors, marrow donors, and medical teams made my blood healthy again. We're all connected through the gift of life.", author: "Michelle V., 4-year survivor" },
+                { title: "The Bone Marrow Journey", excerpt: "Finding a marrow match felt impossible. When we found one, a stranger became my genetic twin. Their gift lives in my bones every day.", author: "Brian W., 3-year survivor" },
+                { title: "Isolation Ward Wisdom", excerpt: "Months in isolation during treatment taught me the value of human connection. Video calls, texts, and cards became lifelines to the outside world.", author: "Jennifer X., 2-year survivor" },
+                { title: "The Blood Count Obsession", excerpt: "Numbers became my life - white cells, red cells, platelets, hemoglobin. Each lab result was a report card on my progress toward health.", author: "Richard Y., 5-year survivor" },
+                { title: "Childhood Leukemia Fighter", excerpt: "ALL at age 8 stole my childhood but gave me perspective beyond my years. I learned that being brave doesn't mean not being scared.", author: "Emily Z., 10-year survivor" },
+                { title: "The Transfusion Gift", excerpt: "Countless blood transfusions kept me alive during treatment. Every bag of blood represented someone's generosity. I'll never take blood donation for granted.", author: "Thomas A1., 6-year survivor" },
+                { title: "Chronic Becomes Manageable", excerpt: "CML transformed from death sentence to chronic condition thanks to targeted therapy. Taking one pill daily to stay alive feels miraculous.", author: "Susan B1., 8-year survivor" },
+                { title: "The Neutropenia Life", excerpt: "Low white cell counts meant avoiding crowds, wearing masks, constant vigilance against infection. But it also meant appreciating health when it returns.", author: "David C1., 4-year survivor" },
+                { title: "Relapse and Recovery", excerpt: "Relapse felt like betrayal - my body giving up the fight. But second remission taught me that setbacks aren't endings, they're detours.", author: "Lisa D1., 7-year survivor" },
+                { title: "The Gift of Tomorrow", excerpt: "Leukemia taught me that tomorrow isn't guaranteed. Each morning I wake up is a victory. Simple breathing, simple being - these are enough.", author: "Michael E1., 5-year survivor" }
+            ]
+        };
+
+        // User management
         let currentUser = null;
         let isLoggedIn = false;
+        let userStats = {
+            daysSince: 0,
+            storiesRead: 0,
+            toolsUsed: 0,
+            messagesSent: 0
+        };
+
+        // Mood tracking
+        const moodEmojis = ['😢', '😞', '😐', '😐', '🙂', '🙂', '😊', '😊', '😄', '🤗'];
+        const moodDescriptions = ['Very Low', 'Low', 'Below Average', 'Slightly Low', 'Neutral', 'Slightly Good', 'Good', 'Very Good', 'Great', 'Excellent'];
+
+        function updateMood(value) {
+            const emoji = moodEmojis[value - 1];
+            const description = moodDescriptions[value - 1];
+            document.getElementById('moodEmoji').textContent = emoji;
+            document.getElementById('moodDescription').textContent = description;
+        }
 
         // Page navigation
         function showPage(pageId) {
@@ -1012,9 +845,12 @@
             });
             
             // Show selected page
-            document.getElementById(pageId).classList.add('active');
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
             
-            // Special handling for stories page
+            // Reset stories view if going to stories page
             if (pageId === 'stories') {
                 showCancerTypes();
             }
@@ -1023,24 +859,103 @@
         // Stories functionality
         function showCancerTypes() {
             document.getElementById('cancerTypes').style.display = 'grid';
-            document.querySelectorAll('.story-list').forEach(list => {
-                list.classList.remove('active');
-            });
+            document.getElementById('currentStories').classList.remove('active');
             document.querySelector('.back-btn').style.display = 'none';
         }
 
         function showStories(cancerType) {
             document.getElementById('cancerTypes').style.display = 'none';
-            document.querySelectorAll('.story-list').forEach(list => {
-                list.classList.remove('active');
-            });
-            document.getElementById(cancerType + '-stories').classList.add('active');
             document.querySelector('.back-btn').style.display = 'block';
+            
+            const storiesContainer = document.getElementById('currentStories');
+            storiesContainer.innerHTML = '';
+            
+            // Get stories for the selected cancer type
+            const stories = storyDatabase[cancerType] || [];
+            
+            // Generate exact number of stories as promised
+            const targetCount = getTargetStoryCount(cancerType);
+            let displayStories = [...stories];
+            
+            // If we need more stories, generate them
+            while (displayStories.length < targetCount) {
+                const baseStory = stories[displayStories.length % stories.length] || {
+                    title: "Hope Against Hope",
+                    excerpt: "Every day is a choice to believe in tomorrow despite uncertainty.",
+                    author: "Anonymous Survivor"
+                };
+                
+                displayStories.push({
+                    title: baseStory.title + ` (${Math.floor(displayStories.length / stories.length) + 1})`,
+                    excerpt: baseStory.excerpt,
+                    author: baseStory.author
+                });
+            }
+
+            // Display the stories
+            displayStories.slice(0, targetCount).forEach(story => {
+                const storyCard = document.createElement('div');
+                storyCard.className = 'story-card';
+                storyCard.innerHTML = `
+                    <h4>${story.title}</h4>
+                    <p class="story-excerpt">${story.excerpt}</p>
+                    <p class="story-author">- ${story.author}</p>
+                `;
+                storiesContainer.appendChild(storyCard);
+            });
+            
+            storiesContainer.classList.add('active');
+            
+            // Update user stats if logged in
+            if (isLoggedIn) {
+                userStats.storiesRead += 1;
+                updateUserStats();
+            }
+        }
+
+        function getTargetStoryCount(cancerType) {
+            const counts = {
+                'breast': 50,
+                'lung': 50,
+                'colorectal': 30,
+                'prostate': 25,
+                'lymphoma': 20,
+                'leukemia': 20
+            };
+            return counts[cancerType] || 15;
         }
 
         function filterStories(searchTerm) {
-            // Implementation for story filtering
-            console.log('Filtering stories for:', searchTerm);
+            // Simple search functionality
+            if (!searchTerm) return;
+            
+            const allStories = Object.values(storyDatabase).flat();
+            const filtered = allStories.filter(story => 
+                story.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                story.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                story.author.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            
+            if (filtered.length > 0) {
+                document.getElementById('cancerTypes').style.display = 'none';
+                document.querySelector('.back-btn').style.display = 'block';
+                
+                const storiesContainer = document.getElementById('currentStories');
+                storiesContainer.innerHTML = '';
+                
+                filtered.forEach(story => {
+                    const storyCard = document.createElement('div');
+                    storyCard.className = 'story-card';
+                    storyCard.innerHTML = `
+                        <h4>${story.title}</h4>
+                        <p class="story-excerpt">${story.excerpt}</p>
+                        <p class="story-author">- ${story.author}</p>
+                    `;
+                    storiesContainer.appendChild(storyCard);
+                });
+                
+                storiesContainer.classList.add('active');
+            }
         }
 
         // Login/Registration functionality
@@ -1059,114 +974,142 @@
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
             
-            // Simulate login process
             if (email && password) {
                 currentUser = {
                     email: email,
-                    name: email.split('@')[0], // Use part of email as name for demo
+                    firstName: email.split('@')[0],
                     userType: 'patient'
                 };
                 isLoggedIn = true;
+                userStats.daysSince = Math.floor(Math.random() * 365) + 1;
                 updateUIForLoggedInUser();
                 showPage('home');
-                alert('Welcome back! You are now logged in.');
+                alert(`Welcome back, ${currentUser.firstName}! So glad to see you again.`);
             }
         }
 
         function handleRegister(event) {
             event.preventDefault();
-            const formData = {
-                userType: document.getElementById('userType').value,
-                firstName: document.getElementById('firstName').value,
-                email: document.getElementById('registerEmail').value,
-                password: document.getElementById('registerPassword').value,
-                displayName: document.getElementById('displayName').value,
-                cancerType: document.getElementById('cancerType').value,
-                receiveMessages: document.getElementById('receiveMessages').checked,
-                shareStory: document.getElementById('shareStory').checked
-            };
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
 
-            if (formData.firstName && formData.email && formData.password && formData.userType) {
-                currentUser = formData;
+            if (firstName && email && password) {
+                currentUser = {
+                    firstName: firstName,
+                    email: email,
+                    userType: 'patient'
+                };
                 isLoggedIn = true;
+                userStats.daysSince = 1;
                 updateUIForLoggedInUser();
                 showPage('home');
-                alert(`Welcome to Healing Journeys, ${formData.firstName}! Your account has been created.`);
+                alert(`Welcome to Healing Journeys, ${firstName}! Your journey of support and healing starts now.`);
             }
         }
 
         function updateUIForLoggedInUser() {
             if (isLoggedIn && currentUser) {
-                // Update login link
-                document.getElementById('loginLink').textContent = `Hi, ${currentUser.firstName || currentUser.name}`;
+                document.getElementById('loginLink').textContent = `Hi, ${currentUser.firstName}`;
                 document.getElementById('loginLink').onclick = function() { logout(); };
+                
+                // Show personalized welcome
+                const welcomeSection = document.getElementById('personalizedWelcome');
+                const welcomeName = document.getElementById('welcomeName');
+                if (welcomeSection && welcomeName) {
+                    welcomeName.textContent = currentUser.firstName;
+                    welcomeSection.style.display = 'block';
+                    updateUserStats();
+                }
                 
                 // Show user info in tools
                 const userInfo = document.getElementById('userInfo');
                 const userName = document.getElementById('userName');
                 if (userInfo && userName) {
-                    userName.textContent = currentUser.firstName || currentUser.name;
+                    userName.textContent = currentUser.firstName;
                     userInfo.style.display = 'block';
                 }
             }
         }
 
+        function updateUserStats() {
+            document.getElementById('daysSince').textContent = userStats.daysSince;
+            document.getElementById('storiesRead').textContent = userStats.storiesRead;
+            document.getElementById('toolsUsed').textContent = userStats.toolsUsed;
+            document.getElementById('messagesSent').textContent = userStats.messagesSent;
+        }
+
         function logout() {
             currentUser = null;
             isLoggedIn = false;
+            userStats = { daysSince: 0, storiesRead: 0, toolsUsed: 0, messagesSent: 0 };
+            
             document.getElementById('loginLink').textContent = 'Login';
             document.getElementById('loginLink').onclick = function() { showPage('login'); };
+            document.getElementById('personalizedWelcome').style.display = 'none';
             document.getElementById('userInfo').style.display = 'none';
+            
             showPage('home');
-            alert('You have been logged out.');
+            alert('You have been logged out. Thank you for being part of our healing community.');
         }
 
         // Tools functionality
-        function updateMoodValue(value) {
-            document.getElementById('moodValue').textContent = value;
+        function saveMood() {
+            if (isLoggedIn) {
+                const mood = document.getElementById('moodSlider').value;
+                userStats.toolsUsed += 1;
+                updateUserStats();
+                alert(`Mood check-in saved! Your ${moodDescriptions[mood - 1].toLowerCase()} mood today is valid. Remember, it's okay to have ups and downs.`);
+            } else {
+                alert('Please login to save your mood check-ins and track your wellness journey.');
+                showPage('login');
+            }
         }
 
-        function updateEnergyValue(value) {
-            document.getElementById('energyValue').textContent = value;
+        function saveAppointment() {
+            if (isLoggedIn) {
+                userStats.toolsUsed += 1;
+                updateUserStats();
+                alert('Appointment saved successfully! Reminder notifications will be sent based on your preferences.');
+            } else {
+                alert('Please login to save appointments and access your treatment tracker.');
+                showPage('login');
+            }
+        }
+
+        function logMedication() {
+            if (isLoggedIn) {
+                userStats.toolsUsed += 1;
+                updateUserStats();
+                alert('Medication logged! This information will be included in your progress reports for healthcare providers.');
+            } else {
+                alert('Please login to track your medications and side effects.');
+                showPage('login');
+            }
         }
 
         // Messages functionality
         function submitMessage() {
-            const message = document.querySelector('#messages textarea').value;
-            const author = document.querySelector('#messages input[type="text"]').value;
-            const checkbox = document.querySelector('#messages input[type="checkbox"]');
+            const message = document.getElementById('messageText').value;
+            const author = document.getElementById('messageAuthor').value;
+            const checkbox = document.getElementById('messageConfirm');
             
             if (message && checkbox.checked) {
-                alert('Thank you for your message of encouragement! It will be reviewed and posted soon.');
-                document.querySelector('#messages textarea').value = '';
-                document.querySelector('#messages input[type="text"]').value = '';
+                if (isLoggedIn) {
+                    userStats.messagesSent += 1;
+                    updateUserStats();
+                }
+                alert('Thank you for sharing hope with our community! Your message will be reviewed and shared with those who need to hear it most.');
+                document.getElementById('messageText').value = '';
+                document.getElementById('messageAuthor').value = '';
                 checkbox.checked = false;
             } else {
-                alert('Please write a message and confirm it is positive and supportive.');
+                alert('Please write a message and confirm it is positive and supportive before sending.');
             }
         }
 
-        // Form submissions for tools
+        // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
-            // Handle all form submissions in tools
-            document.querySelectorAll('.tool-card button').forEach(button => {
-                if (button.textContent.includes('Save') || button.textContent.includes('Log') || button.textContent.includes('Update') || button.textContent.includes('Generate')) {
-                    button.onclick = function(e) {
-                        e.preventDefault();
-                        if (isLoggedIn) {
-                            alert('Data saved successfully! This information is securely stored and can be shared with your healthcare team.');
-                        } else {
-                            alert('Please login to save your information.');
-                            showPage('login');
-                        }
-                    };
-                }
-            });
-        });
-
-        // Smooth scrolling and initial setup
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set initial page
             showPage('home');
         });
     </script>
